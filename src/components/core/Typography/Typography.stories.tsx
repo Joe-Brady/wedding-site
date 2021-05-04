@@ -35,3 +35,8 @@ Body.args = {
   variant: "body",
   text: "Typography Body example",
 };
+export const Error = Template.bind({});
+Error.args = {
+  variant: "error",
+  text: "Typography Error example",
+};

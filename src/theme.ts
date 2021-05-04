@@ -4,10 +4,10 @@ const gridSpacing = (multiplier: number): string => `${multiplier * 8}px`;
 
 const theme: Theme = {
   space: gridSpacing,
-  dark: "black",
-  light: "white",
-  highlight: "orange",
-  error: "red",
+  dark: "#1A0F09",
+  light: "#FEFFFA",
+  highlight: "#874925",
+  error: "#A40A0A",
 };
 
 export default theme;
