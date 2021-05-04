@@ -1,5 +1,5 @@
 node_modules
-docs
+dist
 coverage
 webpack-env.js
 preview-head.html

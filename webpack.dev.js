@@ -5,7 +5,7 @@ const webpackBaseConfig = require("./webpack.base.js");
 module.exports = merge(webpackBaseConfig, {
   mode: "development",
   devServer: {
-    contentBase: "./docs",
+    contentBase: "./dist",
     publicPath: "/",
     historyApiFallback: true,
   },
