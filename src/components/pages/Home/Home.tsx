@@ -6,7 +6,10 @@ import Page from "../../templates/Page/Page";
 import Typography from "../../core/Typography/Typography";
 
 const Home = (): ReactElement => (
-  <Page head={<h1>Jasmine and Joseph</h1>} headImageSrc="">
+  <Page
+    head={<Typography variant="h1" text="Jasmine and Joseph" />}
+    headImageSrc=""
+  >
     <div>
       <Typography variant="h1" text="Hello!" />
       <Link to={PageUrl.Home}>Homepage link</Link>

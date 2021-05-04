@@ -21,9 +21,9 @@ module.exports = {
         },
       },
       {
-        test: /\.(woff2|woff)$/,
+        test: /\.(ttf|woff|woff2)$/,
         use: {
-          loader: "file-loader",
+          loader: "file-loader?name=fonts/[name].[ext]!static",
         },
       },
     ],
