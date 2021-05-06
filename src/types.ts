@@ -1,5 +1,7 @@
 export enum PageUrl {
   Home = "/",
+  RsvpSuccess = "/rsvp-success",
+  OnTheDay = "/on-the-day",
 }
 
 export interface Theme {
