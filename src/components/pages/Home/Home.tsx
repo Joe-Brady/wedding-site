@@ -1,16 +1,39 @@
 import React, { ReactElement, FormEvent } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { PageUrl } from "../../../types";
 import Page from "../../templates/Page/Page";
 import Typography from "../../core/Typography/Typography";
 
 const Home = (): ReactElement => {
-  const history = useHistory();
+  async function submitRsvp(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
 
-  function submitRsvp(event: FormEvent) {
-    event.preventDefault;
-    history.push(PageUrl.RsvpSuccess);
+    const formElements = Array.from(
+      event.currentTarget.elements
+    ) as HTMLInputElement[];
+
+    const urlEncodedForm: string = formElements
+      .filter((elem: HTMLInputElement) => !!elem.value)
+      .map(
+        (element) =>
+          encodeURIComponent(element.name) +
+          "=" +
+          encodeURIComponent(element.value || "")
+      )
+      .join("&");
+
+    await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: urlEncodedForm,
+    })
+      .then(() => {
+        alert("Success!");
+      })
+      .catch(() => {
+        alert("Error occurred. Please try again.");
+      });
   }
 
   return (
