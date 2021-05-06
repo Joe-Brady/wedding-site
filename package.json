@@ -2,7 +2,7 @@
   "name": "wedding-site",
   "description": "Joe and Jasmine's wedding site",
   "scripts": {
-    "build": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js && cp src/_redirects dist",
     "dev": "webpack-dev-server --open --config webpack.dev.js",
     "start": "npm run dev",
     "test": "npm run test:types && npm run test:lint && npm run test:prettier",
