@@ -11,25 +11,24 @@ const Home = (): ReactElement => (
     headImageSrc=""
   >
     <div>
-      <form name="contact" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="contact" />
+      <form name="RSVP" method="POST">
+        <input type="hidden" name="form-name" value="RSVP" />
         <label>
-          Your Name: <input type="text" name="name" />
-        </label>
-        <label>
-          Your Email: <input type="email" name="email" />
-        </label>
-        <label>
-          Your Role:{" "}
-          <select name="role[]" multiple>
-            <option value="leader">Leader</option>
-            <option value="follower">Follower</option>
+          Can you attend?{" "}
+          <select name="Attending">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
           </select>
         </label>
         <label>
-          Message: <textarea name="message"></textarea>
+          How many people?{" "}
+          <input type="number" name="Number of people" min="0" max="50" />
         </label>
-        <button type="submit">Send</button>
+        <label>
+          Write the names of the people attending{" "}
+          <textarea name="Names"></textarea>
+        </label>
+        <button type="submit">Send RSVP</button>
       </form>
       <Link to={PageUrl.Home}>Homepage link</Link>
     </div>
