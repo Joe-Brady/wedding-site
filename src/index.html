@@ -8,5 +8,14 @@
   </head>
   <body>
     <div id="root"></div>
+    <form hidden="true" name="contact" method="POST" data-netlify="true">
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <select name="role[]" multiple>
+        <option value="leader">Leader</option>
+        <option value="follower">Follower</option>
+      </select>
+      <textarea name="message"></textarea>
+    </form>
   </body>
 </html>
