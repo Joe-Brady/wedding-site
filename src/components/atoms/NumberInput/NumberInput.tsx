@@ -28,6 +28,7 @@ const NumberInput = ({
     placeholder={placeholder}
     name={name}
     size={size}
+    required
   />
 );
 
