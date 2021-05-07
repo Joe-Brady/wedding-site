@@ -14,6 +14,7 @@ const StyledSelect = styled("select")`
 const SelectContainer = styled("div")`
   position: relative;
   display: inline-block;
+  width: fit-content;
 `;
 
 const ArrowContainer = styled("div")`

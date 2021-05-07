@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 import { PageUrl } from "../../../types";
 import Page from "../../templates/Page/Page";
 import Typography from "../../core/Typography/Typography";
+import TextInput from "../../atoms/TextInput/TextInput";
+import NumberInput from "../../atoms/NumberInput/NumberInput";
+import Button from "../../atoms/Button/Button";
+import Select from "../../atoms/Select/Select";
+import { Label, Form } from "./styles";
 
 const Home = (): ReactElement => {
   async function submitRsvp(event: FormEvent<HTMLFormElement>) {
@@ -42,25 +47,34 @@ const Home = (): ReactElement => {
       headImageSrc=""
     >
       <div>
-        <form name="RSVP" method="POST" onSubmit={submitRsvp}>
+        <Form name="RSVP" method="POST" onSubmit={submitRsvp}>
           <input type="hidden" name="form-name" value="RSVP" />
-          <label>
-            Can you attend?
-            <select name="Attending">
-              <option value="Yes">Yes</option>
-              <option value="No">No</option>
-            </select>
-          </label>
-          <label>
-            How many people can attend?
-            <input type="number" name="Number of people" min="0" max="20" />
-          </label>
-          <label>
-            What are your full names?
-            <input type="text" name="Names" />
-          </label>
-          <button type="submit">Send RSVP</button>
-        </form>
+          <Label>
+            <Typography variant="h3" text="Can you attend?" />
+            <Select
+              name="Attending"
+              options={[
+                { value: "Yes", text: "Yes" },
+                { value: "No", text: "No" },
+              ]}
+            />
+          </Label>
+          <Label>
+            <Typography variant="h3" text="How many people can attend?" />
+            <NumberInput
+              name="Number of people"
+              size={12}
+              placeholder="Number"
+              min={0}
+              max={20}
+            />
+          </Label>
+          <Label>
+            <Typography variant="h3" text="What are your full names?" />
+            <TextInput name="Names" placeholder="Names (all attendees)" />
+          </Label>
+          <Button text="Submit RSVP" disabled={false} />
+        </Form>
         <Link to={PageUrl.Home}>Homepage link</Link>
       </div>
     </Page>

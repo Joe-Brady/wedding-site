@@ -14,6 +14,8 @@ export interface Props {
   placeholder?: string;
   name: string;
   size?: number;
+  min?: number;
+  max?: number;
 }
 
 const NumberInput = ({
@@ -21,6 +23,8 @@ const NumberInput = ({
   placeholder,
   name,
   size,
+  min,
+  max,
 }: Props): ReactElement => (
   <Input
     type="number"
@@ -28,6 +32,8 @@ const NumberInput = ({
     placeholder={placeholder}
     name={name}
     size={size}
+    min={min}
+    max={max}
     required
   />
 );
