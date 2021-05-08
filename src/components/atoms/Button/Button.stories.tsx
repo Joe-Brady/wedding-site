@@ -12,13 +12,17 @@ const Template: Story<Props> = (args) => <Button {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  onClick: () => {},
+  onClick: () => {
+    //
+  },
   text: "Click me",
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-  onClick: () => {},
+  onClick: () => {
+    //
+  },
   text: "Click me",
   disabled: true,
 };
