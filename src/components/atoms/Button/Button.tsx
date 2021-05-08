@@ -26,7 +26,7 @@ export interface Props {
 
 const Button = ({ text, onClick, submit, disabled }: Props): ReactElement => (
   <StyledButton
-    type={submit ? "submit" : undefined}
+    type={submit ? "submit" : "button"}
     onClick={onClick}
     disabled={disabled}
   >

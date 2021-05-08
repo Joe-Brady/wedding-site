@@ -17,6 +17,8 @@ const Home = (): ReactElement => {
   const nextStep = () => setRsvpStep((currentStep) => currentStep + 1);
   const lastStep = () => setRsvpStep(3);
 
+  const hiddenStyle = { display: "none" };
+
   return (
     <Page
       head={
@@ -39,68 +41,63 @@ const Home = (): ReactElement => {
           }}
         >
           <input type="hidden" name="form-name" value="RSVP" />
-          {rsvpStep === 1 && (
-            <Label>
+
+          <Label style={rsvpStep !== 1 ? hiddenStyle : {}}>
+            <Typography
+              variant="h3"
+              text="Can you attend?"
+              style={{ gridArea: "question", margin: 0, textAlign: "center" }}
+            />
+            <Select
+              name="Attending"
+              options={[
+                { value: "Yes", text: "Yes" },
+                { value: "No", text: "No" },
+              ]}
+              onChange={(event) =>
+                event.target.value === "Yes"
+                  ? setAttending(true)
+                  : setAttending(false)
+              }
+            />
+            <Button text="Next >" onClick={attending ? nextStep : lastStep} />
+          </Label>
+
+          <Label style={rsvpStep !== 2 ? hiddenStyle : {}}>
+            <Typography
+              variant="h3"
+              text="How many people can attend?"
+              style={{ gridArea: "question", margin: 0, textAlign: "center" }}
+            />
+            <NumberInput
+              name="Number of people"
+              size={12}
+              placeholder="Number"
+              min={0}
+              max={20}
+            />
+            <Button text="Next >" onClick={nextStep} />
+          </Label>
+
+          <Label style={rsvpStep !== 3 ? hiddenStyle : {}}>
+            <div style={{ gridArea: "question" }}>
               <Typography
                 variant="h3"
-                text="Can you attend?"
-                style={{ gridArea: "question", margin: 0, textAlign: "center" }}
+                text="What are your names?"
+                style={{ margin: 0, textAlign: "center" }}
               />
-              <Select
-                name="Attending"
-                options={[
-                  { value: "Yes", text: "Yes" },
-                  { value: "No", text: "No" },
-                ]}
-                onChange={(event) =>
-                  event.target.value === "Yes"
-                    ? setAttending(true)
-                    : setAttending(false)
-                }
-              />
-              <Button text="Next >" onClick={attending ? nextStep : lastStep} />
-            </Label>
-          )}
-
-          {rsvpStep === 2 && (
-            <Label>
-              <Typography
-                variant="h3"
-                text="How many people can attend?"
-                style={{ gridArea: "question", margin: 0, textAlign: "center" }}
-              />
-              <NumberInput
-                name="Number of people"
-                size={12}
-                placeholder="Number"
-                min={0}
-                max={20}
-              />
-              <Button text="Next >" onClick={nextStep} />
-            </Label>
-          )}
-
-          {rsvpStep === 3 && (
-            <Label>
-              <div style={{ gridArea: "question" }}>
+              {attending && (
                 <Typography
-                  variant="h3"
-                  text="What are your names?"
-                  style={{ margin: 0, textAlign: "center" }}
+                  variant="body"
+                  text="Include each person's full name for place settings"
+                  style={{ marginBottom: 0, textAlign: "center" }}
                 />
-                {attending && (
-                  <Typography
-                    variant="body"
-                    text="Include each person's full name for place settings"
-                    style={{ marginBottom: 0, textAlign: "center" }}
-                  />
-                )}
-              </div>
+              )}
+            </div>
 
-              <TextInput name="Names" placeholder="Names" />
-              <Button submit text="Submit RSVP" disabled={false} />
-            </Label>
-          )}
+            <TextInput name="Names" placeholder="Names" />
+            <Button submit text="Submit RSVP" disabled={false} />
+          </Label>
 
           {rsvpStep === 4 && (
             <>
