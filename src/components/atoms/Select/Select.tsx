@@ -4,8 +4,8 @@ import styled from "styled-components";
 const StyledSelect = styled("select")`
   padding: ${({ theme }) => theme.space(2)};
   padding-right: ${({ theme }) => theme.space(6)};
-  border-radius: ${({ theme }) => theme.space(2)};
-  border: none;
+  border-radius: 100px;
+  border: 1px solid ${({ theme }) => theme.grey50};
   -webkit-appearance: none;
   -moz-appearance: none;
   cursor: pointer;

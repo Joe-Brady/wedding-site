@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const StyledButton = styled("button")`
   padding: ${({ theme }) => `${theme.space(2)} ${theme.space(3)}`};
-  border-radius: ${({ theme }) => theme.space(2)};
+  border-radius: 100px;
   border: none;
   background-color: ${({ theme }) => theme.highlight};
   color: ${({ theme }) => theme.light};

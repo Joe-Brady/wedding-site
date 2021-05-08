@@ -6,7 +6,8 @@ const theme: Theme = {
   space: gridSpacing,
   dark: "#1A0F09",
   light: "#FFFFFF",
-  highlight: "#874925",
+  grey50: "#B4B4B4",
+  highlight: "#A43104",
   error: "#A40A0A",
 };
 

@@ -1,6 +1,7 @@
 import React, { ReactElement, FormEvent } from "react";
 import { Link } from "react-router-dom";
 
+import theme from "../../../theme";
 import { PageUrl } from "../../../types";
 import Page from "../../templates/Page/Page";
 import Typography from "../../core/Typography/Typography";
@@ -8,7 +9,7 @@ import TextInput from "../../atoms/TextInput/TextInput";
 import NumberInput from "../../atoms/NumberInput/NumberInput";
 import Button from "../../atoms/Button/Button";
 import Select from "../../atoms/Select/Select";
-import { Label, Form } from "./styles";
+import { PageTitleContainer, Label, Form } from "./styles";
 
 const Home = (): ReactElement => {
   async function submitRsvp(event: FormEvent<HTMLFormElement>) {
@@ -43,8 +44,34 @@ const Home = (): ReactElement => {
 
   return (
     <Page
-      head={<Typography variant="h1" text="Jasmine and Joseph" />}
-      headImageSrc="https://www.pngkey.com/png/full/0-4439_laptop-watercolor-painting-throw-pillows-what-light-paint.png"
+      head={
+        <PageTitleContainer>
+          <Typography
+            variant="h1"
+            text="Jasmine"
+            style={{
+              margin: 0,
+              marginRight: theme.space(8),
+            }}
+          />
+          <Typography
+            variant="h2"
+            text="and"
+            style={{
+              margin: 0,
+            }}
+          />
+          <Typography
+            variant="h1"
+            text="Joseph"
+            style={{
+              margin: 0,
+              marginLeft: theme.space(8),
+            }}
+          />
+        </PageTitleContainer>
+      }
+      headImageSrc="https://www.pngkit.com/png/full/3-30878_water-color-background-png-watercolor-background-png-orange.png"
     >
       <div>
         <Form name="RSVP" method="POST" onSubmit={submitRsvp}>

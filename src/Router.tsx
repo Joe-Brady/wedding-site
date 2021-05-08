@@ -2,15 +2,11 @@ import React, { ReactElement } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { PageUrl } from "./types";
 import Home from "./components/pages/Home/Home";
-import RsvpSuccess from "./components/pages/RsvpSuccess/RsvpSuccess";
 
 const Router = (): ReactElement => (
   <>
     <BrowserRouter>
       <Switch>
-        <Route path={PageUrl.RsvpSuccess}>
-          <RsvpSuccess />
-        </Route>
         <Route path={PageUrl.Home}>
           <Home />
         </Route>

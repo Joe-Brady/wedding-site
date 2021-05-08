@@ -6,10 +6,10 @@ import { Theme } from "../../../types";
 export interface Props {
   variant: "body" | "h1" | "h2" | "h3" | "h4" | "error";
   text: string;
-  margin?: boolean;
+  style?: CSSProperties;
 }
 
-const Typography = ({ variant, text, margin }: Props): ReactElement => {
+const Typography = ({ variant, text, style }: Props): ReactElement => {
   let VariantComponent: StyledComponentBase<
     keyof JSX.IntrinsicElements,
     Theme
@@ -33,10 +33,7 @@ const Typography = ({ variant, text, margin }: Props): ReactElement => {
       break;
   }
 
-  const styleOverrides: CSSProperties = {};
-  if (margin === false) styleOverrides.margin = 0;
-
-  return <VariantComponent style={styleOverrides}>{text}</VariantComponent>;
+  return <VariantComponent style={style}>{text}</VariantComponent>;
 };
 
 export default Typography;
