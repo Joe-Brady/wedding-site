@@ -18,7 +18,6 @@ const TextInput = ({ placeholder, name, password }: Props): ReactElement => (
     type={password ? "password" : "text"}
     placeholder={placeholder}
     name={name}
-    required
   />
 );
 

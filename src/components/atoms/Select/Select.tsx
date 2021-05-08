@@ -32,7 +32,7 @@ export interface Props {
 
 const Select = ({ name, options }: Props): ReactElement => (
   <SelectContainer>
-    <StyledSelect name={name} required>
+    <StyledSelect name={name}>
       {options.map((option) => (
         <option value={option.value}>{option.text}</option>
       ))}

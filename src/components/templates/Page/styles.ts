@@ -34,7 +34,7 @@ export const Main = styled("main")`
 
 export const HeadContainer = styled("div")`
   position: relative;
-  margin-bottom: ${({ theme }) => theme.space(12)};
+  margin-bottom: ${({ theme }) => theme.space(16)};
 `;
 
 export const HeadImage = styled("img")`

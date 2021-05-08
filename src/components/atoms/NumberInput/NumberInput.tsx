@@ -34,7 +34,6 @@ const NumberInput = ({
     size={size}
     min={min}
     max={max}
-    required
   />
 );
 

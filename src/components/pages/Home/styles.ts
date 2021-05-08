@@ -9,8 +9,9 @@ export const PageTitleContainer = styled("div")`
 `;
 
 export const Label = styled("label")`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: ${({ theme }) => theme.space(2)};
   align-items: center;
 `;
 
