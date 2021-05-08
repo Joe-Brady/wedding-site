@@ -15,7 +15,7 @@ export const Label = styled("label")`
   align-items: center;
   grid-template-areas: "question" "input" "button";
   justify-items: center;
-  width: ${({ theme }) => theme.space(40)};
+  width: ${({ theme }) => theme.space(34)};
   max-width: 100%;
 `;
 

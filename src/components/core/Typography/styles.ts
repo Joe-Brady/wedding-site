@@ -18,8 +18,8 @@ export const H3 = styled("h3")`
 `;
 
 export const H4 = styled("h4")`
-  font-size: ${({ theme }) => theme.space(2)};
-  font-weight: 100;
+  font-size: ${({ theme }) => theme.space(3)};
+  font-weight: 300;
   text-transform: uppercase;
 `;
 

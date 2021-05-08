@@ -43,5 +43,5 @@ export const HeadImage = styled("img")`
   position: absolute;
   left: 50%;
   transform: translateX(-50%) scale(0.8);
-  top: -900px;
+  top: -800px;
 `;

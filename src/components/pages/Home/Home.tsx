@@ -26,6 +26,12 @@ const Home = (): ReactElement => {
           <Typography variant="h1" text="Jasmine" />
           <Typography variant="h2" text="and" />
           <Typography variant="h1" text="Joseph" />
+          <Typography
+            variant="h4"
+            text="Sunday 29 May 2022"
+            style={{ marginTop: "32px" }}
+          />
+          <Typography variant="h4" text="Bodleian Library, Oxford" />
         </PageTitleContainer>
       }
       headImageSrc="https://www.pngkit.com/png/full/3-30878_water-color-background-png-watercolor-background-png-orange.png"
