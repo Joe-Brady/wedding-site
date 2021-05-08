@@ -11,6 +11,7 @@ const StyledSelect = styled("select")`
   -moz-appearance: none;
   cursor: pointer;
   width: 100%;
+  box-shadow: none;
 `;
 
 const SelectContainer = styled("div")`

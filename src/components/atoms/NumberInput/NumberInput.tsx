@@ -9,6 +9,7 @@ const Input = styled("input")`
   display: flex;
   width: 100%;
   box-sizing: border-box;
+  box-shadow: none;
 `;
 
 export interface Props {

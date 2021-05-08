@@ -8,6 +8,7 @@ const Input = styled("input")`
   border: 1px solid ${({ theme }) => theme.grey50};
   width: 100%;
   box-sizing: border-box;
+  box-shadow: none;
 `;
 
 export interface Props {
