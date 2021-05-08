@@ -30,6 +30,7 @@ const NumberInput = ({
 }: Props): ReactElement => (
   <Input
     type="number"
+    pattern="\d*"
     defaultValue={defaultValue}
     placeholder={placeholder}
     name={name}
