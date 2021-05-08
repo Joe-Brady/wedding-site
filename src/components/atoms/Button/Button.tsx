@@ -2,6 +2,7 @@ import React, { ReactElement, MouseEvent } from "react";
 import styled from "styled-components";
 
 const StyledButton = styled("button")`
+  grid-area: button;
   padding: ${({ theme }) => `${theme.space(2)} ${theme.space(3)}`};
   border-radius: 100px;
   border: none;

@@ -1,7 +1,8 @@
-import React, { ReactElement } from "react";
+import React, { ChangeEvent, ReactElement } from "react";
 import styled from "styled-components";
 
 const StyledSelect = styled("select")`
+  grid-area: input;
   padding: ${({ theme }) => theme.space(2)};
   padding-right: ${({ theme }) => theme.space(6)};
   border-radius: 100px;
@@ -28,11 +29,12 @@ const ArrowContainer = styled("div")`
 export interface Props {
   name: string;
   options: { value: string; text: string }[];
+  onChange?: (event: ChangeEvent<HTMLSelectElement>) => void;
 }
 
-const Select = ({ name, options }: Props): ReactElement => (
+const Select = ({ name, options, onChange }: Props): ReactElement => (
   <SelectContainer>
-    <StyledSelect name={name}>
+    <StyledSelect name={name} onChange={onChange}>
       {options.map((option) => (
         <option value={option.value}>{option.text}</option>
       ))}

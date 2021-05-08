@@ -11,8 +11,10 @@ export const PageTitleContainer = styled("div")`
 export const Label = styled("label")`
   display: grid;
   grid-auto-flow: column;
-  grid-gap: ${({ theme }) => theme.space(2)};
+  grid-gap: ${({ theme }) => theme.space(4)};
   align-items: center;
+  grid-template-areas: "question question" "input button";
+  justify-items: center;
 `;
 
 export const Form = styled("form")`

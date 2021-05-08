@@ -12,7 +12,10 @@ import Tick from "./Tick";
 
 const Home = (): ReactElement => {
   const [rsvpStep, setRsvpStep] = useState(1);
+  const [attending, setAttending] = useState(true);
+
   const nextStep = () => setRsvpStep((currentStep) => currentStep + 1);
+  const lastStep = () => setRsvpStep(3);
 
   return (
     <Page
@@ -38,21 +41,34 @@ const Home = (): ReactElement => {
           <input type="hidden" name="form-name" value="RSVP" />
           {rsvpStep === 1 && (
             <Label>
-              <Typography variant="h3" text="Can you attend?" />
+              <Typography
+                variant="h3"
+                text="Can you attend?"
+                style={{ gridArea: "question", margin: 0, textAlign: "center" }}
+              />
               <Select
                 name="Attending"
                 options={[
                   { value: "Yes", text: "Yes" },
                   { value: "No", text: "No" },
                 ]}
+                onChange={(event) =>
+                  event.target.value === "Yes"
+                    ? setAttending(true)
+                    : setAttending(false)
+                }
               />
-              <Button text="Next >" onClick={nextStep} />
+              <Button text="Next >" onClick={attending ? nextStep : lastStep} />
             </Label>
           )}
 
           {rsvpStep === 2 && (
             <Label>
-              <Typography variant="h3" text="How many people can attend?" />
+              <Typography
+                variant="h3"
+                text="How many people can attend?"
+                style={{ gridArea: "question", margin: 0, textAlign: "center" }}
+              />
               <NumberInput
                 name="Number of people"
                 size={12}
@@ -66,8 +82,22 @@ const Home = (): ReactElement => {
 
           {rsvpStep === 3 && (
             <Label>
-              <Typography variant="h3" text="What are your full names?" />
-              <TextInput name="Names" placeholder="Names (all attendees)" />
+              <div style={{ gridArea: "question" }}>
+                <Typography
+                  variant="h3"
+                  text="What are your names?"
+                  style={{ margin: 0, textAlign: "center" }}
+                />
+                {attending && (
+                  <Typography
+                    variant="body"
+                    text="Include each person's full name for place settings"
+                    style={{ marginBottom: 0, textAlign: "center" }}
+                  />
+                )}
+              </div>
+
+              <TextInput name="Names" placeholder="Names" />
               <Button submit text="Submit RSVP" disabled={false} />
             </Label>
           )}
