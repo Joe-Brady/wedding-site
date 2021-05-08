@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const PageTitleContainer = styled("div")`
   text-align: center;
   color: ${({ theme }) => theme.light};
+  > * {
+    margin: 0;
+  }
 `;
 
 export const Label = styled("label")`

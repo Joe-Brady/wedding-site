@@ -5,7 +5,7 @@ const StyledButton = styled("button")`
   padding: ${({ theme }) => `${theme.space(2)} ${theme.space(3)}`};
   border-radius: 100px;
   border: none;
-  background-color: ${({ theme }) => theme.highlight};
+  background-color: ${({ theme }) => theme.dark};
   color: ${({ theme }) => theme.light};
   opacity: ${({ disabled }) => (disabled ? "0.3" : "1")};
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};

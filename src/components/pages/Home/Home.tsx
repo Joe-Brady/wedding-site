@@ -46,29 +46,9 @@ const Home = (): ReactElement => {
     <Page
       head={
         <PageTitleContainer>
-          <Typography
-            variant="h1"
-            text="Jasmine"
-            style={{
-              margin: 0,
-              marginRight: theme.space(8),
-            }}
-          />
-          <Typography
-            variant="h2"
-            text="and"
-            style={{
-              margin: 0,
-            }}
-          />
-          <Typography
-            variant="h1"
-            text="Joseph"
-            style={{
-              margin: 0,
-              marginLeft: theme.space(8),
-            }}
-          />
+          <Typography variant="h1" text="Jasmine" />
+          <Typography variant="h2" text="and" />
+          <Typography variant="h1" text="Joseph" />
         </PageTitleContainer>
       }
       headImageSrc="https://www.pngkit.com/png/full/3-30878_water-color-background-png-watercolor-background-png-orange.png"
