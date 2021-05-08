@@ -7,7 +7,8 @@ const Input = styled("input")`
   border-radius: 100px;
   border: 1px solid ${({ theme }) => theme.grey50};
   display: flex;
-  width: ${({ theme, size }) => (size ? theme.space(size) : "auto")};
+  width: 100%;
+  box-sizing: border-box;
 `;
 
 export interface Props {

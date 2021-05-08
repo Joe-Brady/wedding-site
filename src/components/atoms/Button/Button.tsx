@@ -10,7 +10,7 @@ const StyledButton = styled("button")`
   color: ${({ theme }) => theme.light};
   opacity: ${({ disabled }) => (disabled ? "0.3" : "1")};
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
-  width: fit-content;
+  width: 100%;
 
   &:hover {
     opacity: ${({ disabled }) => (disabled ? "0.3" : "0.8")};

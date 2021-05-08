@@ -13,8 +13,10 @@ export const Label = styled("label")`
   grid-auto-flow: column;
   grid-gap: ${({ theme }) => theme.space(4)};
   align-items: center;
-  grid-template-areas: "question question" "input button";
+  grid-template-areas: "question" "input" "button";
   justify-items: center;
+  width: ${({ theme }) => theme.space(40)};
+  max-width: 100%;
 `;
 
 export const Form = styled("form")`

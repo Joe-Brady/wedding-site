@@ -10,12 +10,13 @@ const StyledSelect = styled("select")`
   -webkit-appearance: none;
   -moz-appearance: none;
   cursor: pointer;
+  width: 100%;
 `;
 
 const SelectContainer = styled("div")`
   position: relative;
   display: inline-block;
-  width: fit-content;
+  width: 100%;
 `;
 
 const ArrowContainer = styled("div")`

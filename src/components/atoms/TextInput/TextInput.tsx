@@ -6,7 +6,7 @@ const Input = styled("input")`
   padding: ${({ theme }) => theme.space(2)};
   border-radius: 100px;
   border: 1px solid ${({ theme }) => theme.grey50};
-  width: ${({ theme }) => theme.space(30)};
+  width: 100%;
   box-sizing: border-box;
 `;
 
