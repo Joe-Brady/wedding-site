@@ -15,9 +15,9 @@ const Template = ({ children, head, headImageSrc }: Props): ReactElement => (
 
     <HeadContainer>
       <Nav>
-        <NavLink to={PageUrl.Home}>On the day</NavLink>
-        <NavLink to={PageUrl.Home}>Useful information</NavLink>
-        <NavLink to={PageUrl.Home}>About us</NavLink>
+        <NavLink to={PageUrl.Home}>RSVP</NavLink>
+        <NavLink to={PageUrl.OnTheDay}>On the day</NavLink>
+        <NavLink to={PageUrl.AboutUs}>About us</NavLink>
       </Nav>
       <div>{head}</div>
     </HeadContainer>

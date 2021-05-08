@@ -1,6 +1,7 @@
 export enum PageUrl {
   Home = "/",
   OnTheDay = "/on-the-day",
+  AboutUs = "/about-us",
 }
 
 export interface Theme {
