@@ -44,7 +44,7 @@ const Home = (): ReactElement => {
   return (
     <Page
       head={<Typography variant="h1" text="Jasmine and Joseph" />}
-      headImageSrc=""
+      headImageSrc="https://www.pngkey.com/png/full/0-4439_laptop-watercolor-painting-throw-pillows-what-light-paint.png"
     >
       <div>
         <Form name="RSVP" method="POST" onSubmit={submitRsvp}>

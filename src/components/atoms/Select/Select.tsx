@@ -22,6 +22,7 @@ const ArrowContainer = styled("div")`
   right: ${({ theme }) => theme.space(2)};
   top: 50%;
   transform: translateY(-45%);
+  pointer-events: none;
 `;
 
 export interface Props {
