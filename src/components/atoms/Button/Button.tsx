@@ -19,11 +19,16 @@ const StyledButton = styled("button")`
 export interface Props {
   text: string;
   onClick?: (event: MouseEvent) => void;
+  submit?: boolean;
   disabled?: boolean;
 }
 
-const Button = ({ text, onClick, disabled }: Props): ReactElement => (
-  <StyledButton type="submit" onClick={onClick} disabled={disabled}>
+const Button = ({ text, onClick, submit, disabled }: Props): ReactElement => (
+  <StyledButton
+    type={submit ? "submit" : undefined}
+    onClick={onClick}
+    disabled={disabled}
+  >
     {text}
   </StyledButton>
 );

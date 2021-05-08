@@ -1,7 +1,5 @@
 import React, { useState, ReactElement } from "react";
-import { Link } from "react-router-dom";
 
-import { PageUrl } from "../../../types";
 import Page from "../../templates/Page/Page";
 import Typography from "../../core/Typography/Typography";
 import TextInput from "../../atoms/TextInput/TextInput";
@@ -10,6 +8,7 @@ import Button from "../../atoms/Button/Button";
 import Select from "../../atoms/Select/Select";
 import { PageTitleContainer, Label, Form } from "./styles";
 import { submitRsvp } from "./utils";
+import Tick from "./Tick";
 
 const Home = (): ReactElement => {
   const [rsvpStep, setRsvpStep] = useState(1);
@@ -29,7 +28,13 @@ const Home = (): ReactElement => {
       <div>
         <Typography variant="h2" text="RSVP" style={{ textAlign: "center" }} />
 
-        <Form name="RSVP" method="POST" onSubmit={submitRsvp}>
+        <Form
+          name="RSVP"
+          method="POST"
+          onSubmit={(e) => {
+            submitRsvp(e).then(nextStep);
+          }}
+        >
           <input type="hidden" name="form-name" value="RSVP" />
           {rsvpStep === 1 && (
             <Label>
@@ -63,12 +68,19 @@ const Home = (): ReactElement => {
             <Label>
               <Typography variant="h3" text="What are your full names?" />
               <TextInput name="Names" placeholder="Names (all attendees)" />
-              <Button text="Submit RSVP" disabled={false} />
+              <Button submit text="Submit RSVP" disabled={false} />
             </Label>
+          )}
+
+          {rsvpStep === 4 && (
+            <>
+              <Tick />
+              <Typography variant="h3" text="Thank you!" />
+            </>
           )}
         </Form>
 
-        <Link to={PageUrl.Home}>Homepage link</Link>
+        {/* <Link to={PageUrl.Home}>Homepage link</Link> */}
       </div>
     </Page>
   );

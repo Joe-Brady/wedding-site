@@ -23,11 +23,7 @@ export const submitRsvp = async (
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: urlEncodedForm,
-  })
-    .then(() => {
-      alert("Success!");
-    })
-    .catch(() => {
-      alert("Error occurred. Please try again.");
-    });
+  }).catch(() => {
+    alert("Error occurred. Please try again.");
+  });
 };

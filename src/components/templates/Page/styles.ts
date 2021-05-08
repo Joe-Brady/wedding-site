@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const Body = styled("div")`
   position: relative;
+  padding: ${({ theme }) => theme.space(2)};
 `;
 
 export const Nav = styled("nav")`
@@ -11,7 +12,7 @@ export const Nav = styled("nav")`
   grid-auto-flow: column;
   grid-gap: ${({ theme }) => theme.space(4)};
   padding: ${({ theme }) => theme.space(2)};
-  margin-bottom: ${({ theme }) => theme.space(4)};
+  margin-bottom: ${({ theme }) => theme.space(2)};
 `;
 
 export const NavLink = styled(Link)`
