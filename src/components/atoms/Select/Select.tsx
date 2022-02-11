@@ -2,7 +2,6 @@ import React, { ChangeEvent, ReactElement } from "react";
 import styled from "styled-components";
 
 const StyledSelect = styled("select")`
-  grid-area: input;
   padding: ${({ theme }) => theme.space(2)};
   padding-right: ${({ theme }) => theme.space(6)};
   border-radius: 100px;
@@ -12,6 +11,7 @@ const StyledSelect = styled("select")`
   cursor: pointer;
   width: 100%;
   box-shadow: none;
+  margin: 2rem 0;
 `;
 
 const SelectContainer = styled("div")`
@@ -38,7 +38,9 @@ const Select = ({ name, options, onChange }: Props): ReactElement => (
   <SelectContainer>
     <StyledSelect name={name} onChange={onChange}>
       {options.map((option) => (
-        <option value={option.value}>{option.text}</option>
+        <option key={option.value} value={option.value}>
+          {option.text}
+        </option>
       ))}
     </StyledSelect>
 

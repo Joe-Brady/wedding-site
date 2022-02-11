@@ -33,7 +33,7 @@ const Typography = ({ variant, text, style }: Props): ReactElement => {
       break;
   }
 
-  return <VariantComponent style={style}>{text}</VariantComponent>;
+  return <VariantComponent style={{ ...style }}>{text}</VariantComponent>;
 };
 
 export default Typography;

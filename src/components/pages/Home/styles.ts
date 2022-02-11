@@ -8,14 +8,11 @@ export const PageTitleContainer = styled("div")`
   }
 `;
 
-export const Label = styled("label")`
-  display: grid;
-  grid-auto-flow: column;
-  grid-gap: ${({ theme }) => theme.space(4)};
-  align-items: center;
-  grid-template-areas: "question" "input" "button";
+export const FormStage = styled("div")`
+  display: flex
+  flex-direction: column;
   justify-items: center;
-  width: ${({ theme }) => theme.space(34)};
+  width: ${({ theme }) => theme.space(35)};
   max-width: 100%;
 `;
 

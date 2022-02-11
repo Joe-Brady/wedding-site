@@ -3,19 +3,22 @@ import React, { useState, ReactElement } from "react";
 import Page from "../../templates/Page/Page";
 import Typography from "../../core/Typography/Typography";
 import TextInput from "../../atoms/TextInput/TextInput";
-import NumberInput from "../../atoms/NumberInput/NumberInput";
 import Button from "../../atoms/Button/Button";
 import Select from "../../atoms/Select/Select";
-import { PageTitleContainer, Label, Form } from "./styles";
+import { PageTitleContainer, FormStage, Form } from "./styles";
 import { submitRsvp } from "./utils";
 import Tick from "./Tick";
+import Checkbox from "../../atoms/Checkbox/Checkbox";
+
+interface Person {
+  fullName: string;
+}
 
 const Home = (): ReactElement => {
-  const [rsvpStep, setRsvpStep] = useState(1);
+  const [rsvpStep, setRsvpStep] = useState("CAN_YOU_ATTEND");
   const [attending, setAttending] = useState(true);
-
-  const nextStep = () => setRsvpStep((currentStep) => currentStep + 1);
-  const lastStep = () => setRsvpStep(3);
+  const [people, setPeople] = useState<Person[]>([]);
+  const [eveningGuest, setEveningGuest] = useState(false);
 
   const hiddenStyle = { display: "none" };
 
@@ -43,12 +46,12 @@ const Home = (): ReactElement => {
           name="RSVP"
           method="POST"
           onSubmit={(e) => {
-            submitRsvp(e).then(nextStep);
+            submitRsvp(e).then(() => setRsvpStep("THANK_YOU"));
           }}
         >
           <input type="hidden" name="form-name" value="RSVP" />
 
-          <Label style={rsvpStep !== 1 ? hiddenStyle : {}}>
+          <FormStage style={rsvpStep !== "CAN_YOU_ATTEND" ? hiddenStyle : {}}>
             <Typography
               variant="h3"
               text="Can you attend?"
@@ -66,46 +69,167 @@ const Home = (): ReactElement => {
                   : setAttending(false)
               }
             />
-            <Button text="Next >" onClick={attending ? nextStep : lastStep} />
-          </Label>
+            <Button
+              text="Next >"
+              onClick={
+                attending
+                  ? () => setRsvpStep("TYPE_OF_GUEST")
+                  : () => setRsvpStep("PEOPLE")
+              }
+            />
+          </FormStage>
 
-          <Label style={rsvpStep !== 2 ? hiddenStyle : {}}>
+          <FormStage style={rsvpStep !== "TYPE_OF_GUEST" ? hiddenStyle : {}}>
             <Typography
               variant="h3"
-              text="How many people can attend?"
+              text="Are you a full-day guest or an evening guest?"
               style={{ gridArea: "question", margin: 0, textAlign: "center" }}
             />
-            <NumberInput
-              name="Number of people"
-              size={12}
-              placeholder="Number"
-              min={0}
-              max={20}
+            <Select
+              name="Type of guest"
+              options={[
+                { value: "Full day", text: "Full day" },
+                { value: "Evening", text: "Evening" },
+              ]}
+              onChange={(event) =>
+                event.target.value === "Evening"
+                  ? setEveningGuest(true)
+                  : setEveningGuest(false)
+              }
             />
-            <Button text="Next >" onClick={nextStep} />
-          </Label>
+            <Button
+              text="Next >"
+              onClick={
+                eveningGuest
+                  ? () => setRsvpStep("EVENING_GUEST_ATTENDING_CEREMONY")
+                  : () => setRsvpStep("PEOPLE")
+              }
+            />
+          </FormStage>
 
-          <Label style={rsvpStep !== 3 ? hiddenStyle : {}}>
-            <div style={{ gridArea: "question" }}>
+          <FormStage
+            style={
+              rsvpStep !== "EVENING_GUEST_ATTENDING_CEREMONY" ? hiddenStyle : {}
+            }
+          >
+            <div
+              style={{ gridArea: "question", margin: 0, textAlign: "center" }}
+            >
               <Typography
                 variant="h3"
-                text="What are your names?"
-                style={{ margin: 0, textAlign: "center" }}
+                text="Will you also attend the ceremony?"
               />
-              {attending && (
-                <Typography
-                  variant="body"
-                  text="Include each person's full name for place settings"
-                  style={{ marginBottom: 0, textAlign: "center" }}
-                />
-              )}
+              <Typography
+                variant="body"
+                text="Evening guests are welcome to attend the ceremony (arrive 12-12:30 at Convocation House). Please have lunch and dinner in Oxford and we will feed you chips and sausage butties around 9pm!"
+              />
             </div>
 
-            <TextInput name="Names" placeholder="Names" />
-            <Button submit text="Submit RSVP" disabled={false} />
-          </Label>
+            <Select
+              name="Evening guest attending ceremony"
+              options={[
+                { value: "No", text: "No, evening only" },
+                { value: "Yes", text: "Yes, ceremony + evening" },
+              ]}
+            />
+            <Button text="Next >" onClick={() => setRsvpStep("PEOPLE")} />
+          </FormStage>
 
-          {rsvpStep === 4 && (
+          <FormStage style={rsvpStep !== "PEOPLE" ? hiddenStyle : {}}>
+            <div>
+              <Typography
+                variant="h3"
+                text={
+                  attending
+                    ? "Who is attending?"
+                    : "Who was on your invitation?"
+                }
+                style={{ margin: 0, marginBottom: "2rem", textAlign: "center" }}
+              />
+
+              <Typography
+                variant="body"
+                text="Click 'Add person' for each person on the invitation."
+                style={{ margin: 0, marginBottom: "2rem", textAlign: "center" }}
+              />
+            </div>
+
+            {people.map((person, index) => (
+              <div>
+                <Typography
+                  variant="h4"
+                  text={`Person ${index + 1}`}
+                  style={{
+                    margin: 0,
+                    marginBottom: "2rem",
+                    textAlign: "center",
+                  }}
+                />
+
+                <TextInput
+                  name={`Full name for person ${index}`}
+                  placeholder="Full name (including surname)"
+                />
+
+                {eveningGuest === false && attending && (
+                  <div style={{ marginBottom: "2rem" }}>
+                    <Typography
+                      variant="body"
+                      text="Dietary requirements for this person"
+                      style={{ marginBottom: 0, textAlign: "center" }}
+                    />
+
+                    <Checkbox
+                      name={`Dietary Requirement for person ${index}: Vegetarian`}
+                      label="Vegetarian"
+                    />
+                    <Checkbox
+                      name={`Dietary Requirement for person ${index}: Vegan`}
+                      label="Vegan"
+                    />
+
+                    <Checkbox
+                      name={`Dietary Requirement for person ${index}: Gluten intolerant`}
+                      label="Gluten free"
+                    />
+                    <Checkbox
+                      name={`Dietary Requirement for person ${index}: Nut free`}
+                      label="Nut free"
+                    />
+                    <Checkbox
+                      name={`Dietary Requirement for person ${index}: Dairy`}
+                      label="Dairy free"
+                    />
+                    <br />
+                    <TextInput
+                      name={`Dietary Requirement for person ${index}: Other`}
+                      placeholder="Other (please specify)"
+                    />
+                  </div>
+                )}
+              </div>
+            ))}
+
+            <div>
+              <Button
+                text={people.length < 1 ? "Add person" : "Add another person"}
+                onClick={() =>
+                  setPeople((currentPeople) => [
+                    ...currentPeople,
+                    { fullName: "" },
+                  ])
+                }
+              />
+
+              <Button
+                submit
+                text="Submit RSVP"
+                disabled={people.length === 0}
+              />
+            </div>
+          </FormStage>
+
+          {rsvpStep === "THANK_YOU" && (
             <>
               <Tick />
               <Typography variant="h3" text="Thank you!" />
