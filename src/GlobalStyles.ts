@@ -1,20 +1,34 @@
 import { createGlobalStyle } from "styled-components";
 import normalizeCSS from "./normalize-css";
-import Bitter from "./fonts/Bitter.ttf";
+import Baskerville from "./fonts/Baskerville.ttf";
+import BaskervilleBold from "./fonts/BaskervilleBold.ttf";
+import BaskervilleItalic from "./fonts/BaskervilleItalic.ttf";
 
 const GlobalStyles = createGlobalStyle`
   ${normalizeCSS};
 
   @font-face {
-    font-family: 'Bitter';
-    src: url(${Bitter}) format('ttf');
+    font-family: 'Baskerville';
+    src: url(${Baskerville}) format('ttf');
+  }
+
+  @font-face {
+    font-family: 'Baskerville';
+    src: url(${BaskervilleBold}) format('ttf');
+    font-weight: bold;
+  }
+
+  @font-face {
+    font-family: 'Baskerville';
+    src: url(${BaskervilleItalic}) format('ttf');
+    font-style: italic, oblique;
   }
 
   html, body {
-    font-family: 'Bitter', sans-serif;
+    font-family: 'Baskerville', sans-serif;
     font-weight: 400;
     color: ${({ theme }) => theme.dark};
-    background-color: ${({ theme }) => theme.light};
+    background-color: ${({ theme }) => theme.lightTint};
   }
 
   a {

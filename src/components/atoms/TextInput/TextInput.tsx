@@ -15,13 +15,20 @@ export interface Props {
   placeholder?: string;
   name: string;
   password?: boolean;
+  required?: boolean;
 }
 
-const TextInput = ({ placeholder, name, password }: Props): ReactElement => (
+const TextInput = ({
+  placeholder,
+  name,
+  password,
+  required,
+}: Props): ReactElement => (
   <Input
     type={password ? "password" : "text"}
     placeholder={placeholder}
     name={name}
+    required={required}
   />
 );
 

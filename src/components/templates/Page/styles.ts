@@ -16,11 +16,11 @@ export const Nav = styled("nav")`
 `;
 
 export const NavLink = styled(Link)`
-  color: ${({ theme }) => theme.light};
+  color: ${({ theme }) => theme.dark};
   text-decoration: none;
   white-space: nowrap;
   padding: ${({ theme }) => theme.space(0.5)} 0;
-  border-bottom: 2px solid ${({ theme }) => theme.light};
+  border-bottom: 2px solid ${({ theme }) => theme.dark};
   transition: 0.3s background-color;
   background-color: rgba(255, 255, 255, 0);
 
@@ -31,17 +31,29 @@ export const NavLink = styled(Link)`
 
 export const Main = styled("main")`
   position: relative;
+  z-index: 1;
 `;
 
 export const HeadContainer = styled("div")`
   position: relative;
+  z-index: 1;
   margin-bottom: ${({ theme }) => theme.space(16)};
 `;
 
 export const HeadImage = styled("img")`
-  pointer-events: none;
+  width: 80rem;
+  max-width: 130%;
+  margin-top: -20rem;
+  @media (max-width: 983px) {
+    margin-top: -32.5%;
+  }
+`;
+
+export const HeadImageContainer = styled("div")`
+  width: 100%;
+  display: flex;
+  justify-content: center;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%) scale(0.8);
-  top: -800px;
+  left: 0;
+  top: 0;
 `;

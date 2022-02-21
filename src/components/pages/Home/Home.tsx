@@ -5,7 +5,7 @@ import Typography from "../../core/Typography/Typography";
 import TextInput from "../../atoms/TextInput/TextInput";
 import Button from "../../atoms/Button/Button";
 import Select from "../../atoms/Select/Select";
-import { PageTitleContainer, FormStage, Form } from "./styles";
+import { PageTitleContainer, FormStage, Form, NamesContainer } from "./styles";
 import { submitRsvp } from "./utils";
 import Tick from "./Tick";
 import Checkbox from "../../atoms/Checkbox/Checkbox";
@@ -16,9 +16,13 @@ interface Person {
 
 const Home = (): ReactElement => {
   const [rsvpStep, setRsvpStep] = useState("CAN_YOU_ATTEND");
-  const [attending, setAttending] = useState(true);
+  const [attending, setAttending] = useState<boolean>();
   const [people, setPeople] = useState<Person[]>([]);
-  const [eveningGuest, setEveningGuest] = useState(false);
+  const [eveningGuest, setEveningGuest] = useState<boolean>();
+  const [
+    eveningGuestAttendingCeremony,
+    setEveningGuestAttendingCeremony,
+  ] = useState<boolean>();
 
   const hiddenStyle = { display: "none" };
 
@@ -26,18 +30,17 @@ const Home = (): ReactElement => {
     <Page
       head={
         <PageTitleContainer>
-          <Typography variant="h1" text="Jasmine" />
-          <Typography variant="h2" text="and" />
-          <Typography variant="h1" text="Joseph" />
-          <Typography
-            variant="h4"
-            text="Sunday 29 May 2022"
-            style={{ marginTop: "32px" }}
-          />
+          <NamesContainer>
+            <Typography variant="h1" text="Jasmine" smallCaps />
+            <Typography variant="h2" text="and" fontStyle="italic" />
+            <Typography variant="h1" text="Joe" smallCaps />
+          </NamesContainer>
+
+          <Typography variant="h4" text="Sunday 29th May 2022" />
           <Typography variant="h4" text="Bodleian Library, Oxford" />
         </PageTitleContainer>
       }
-      headImageSrc="https://www.pngkit.com/png/full/3-30878_water-color-background-png-watercolor-background-png-orange.png"
+      headImageSrc="https://res.cloudinary.com/dqqwahudr/image/upload/v1645363106/flowers_wlxnim.png"
     >
       <div>
         <Typography variant="h2" text="RSVP" style={{ textAlign: "center" }} />
@@ -46,7 +49,13 @@ const Home = (): ReactElement => {
           name="RSVP"
           method="POST"
           onSubmit={(e) => {
-            submitRsvp(e).then(() => setRsvpStep("THANK_YOU"));
+            submitRsvp(e).then((response) => {
+              if (response.ok) {
+                setRsvpStep("THANK_YOU");
+              } else {
+                setRsvpStep("ERROR");
+              }
+            });
           }}
         >
           <input type="hidden" name="form-name" value="RSVP" />
@@ -71,6 +80,7 @@ const Home = (): ReactElement => {
             />
             <Button
               text="Next >"
+              disabled={attending === undefined}
               onClick={
                 attending
                   ? () => setRsvpStep("TYPE_OF_GUEST")
@@ -99,6 +109,7 @@ const Home = (): ReactElement => {
             />
             <Button
               text="Next >"
+              disabled={eveningGuest === undefined}
               onClick={
                 eveningGuest
                   ? () => setRsvpStep("EVENING_GUEST_ATTENDING_CEREMONY")
@@ -121,7 +132,7 @@ const Home = (): ReactElement => {
               />
               <Typography
                 variant="body"
-                text="Evening guests are welcome to attend the ceremony (arrive 12-12:30 at Convocation House). Please have lunch and dinner in Oxford and we will feed you chips and sausage butties around 9pm!"
+                text="Evening guests are welcome to attend the ceremony (arrive 12-12:30 at Convocation House). Please feel free to have lunch/dinner in Oxford and we will feed you chips and sausage butties around 9pm!"
               />
             </div>
 
@@ -131,8 +142,17 @@ const Home = (): ReactElement => {
                 { value: "No", text: "No, evening only" },
                 { value: "Yes", text: "Yes, ceremony + evening" },
               ]}
+              onChange={(event) =>
+                event.target.value === "Yes"
+                  ? setEveningGuestAttendingCeremony(true)
+                  : setEveningGuestAttendingCeremony(false)
+              }
             />
-            <Button text="Next >" onClick={() => setRsvpStep("PEOPLE")} />
+            <Button
+              text="Next >"
+              disabled={eveningGuestAttendingCeremony === undefined}
+              onClick={() => setRsvpStep("PEOPLE")}
+            />
           </FormStage>
 
           <FormStage style={rsvpStep !== "PEOPLE" ? hiddenStyle : {}}>
@@ -142,20 +162,24 @@ const Home = (): ReactElement => {
                 text={
                   attending
                     ? "Who is attending?"
-                    : "Who was on your invitation?"
+                    : "We're sorry you can't make it! Hopefully we can see you another time."
                 }
                 style={{ margin: 0, marginBottom: "2rem", textAlign: "center" }}
               />
 
               <Typography
                 variant="body"
-                text="Click 'Add person' for each person on the invitation."
+                text={
+                  attending
+                    ? "Click 'Add person' for each person on the invitation."
+                    : "Click 'Add person' for each person who can't come"
+                }
                 style={{ margin: 0, marginBottom: "2rem", textAlign: "center" }}
               />
             </div>
 
             {people.map((person, index) => (
-              <div>
+              <div key={`person-details-${index}`}>
                 <Typography
                   variant="h4"
                   text={`Person ${index + 1}`}
@@ -166,17 +190,22 @@ const Home = (): ReactElement => {
                   }}
                 />
 
+                <Typography
+                  variant="body"
+                  text="Full name (including surname):"
+                />
+
                 <TextInput
                   name={`Full name for person ${index}`}
-                  placeholder="Full name (including surname)"
+                  placeholder="e.g. John Smith"
+                  required
                 />
 
                 {eveningGuest === false && attending && (
                   <div style={{ marginBottom: "2rem" }}>
                     <Typography
                       variant="body"
-                      text="Dietary requirements for this person"
-                      style={{ marginBottom: 0, textAlign: "center" }}
+                      text="Dietary requirements for this person:"
                     />
 
                     <Checkbox
@@ -233,6 +262,20 @@ const Home = (): ReactElement => {
             <>
               <Tick />
               <Typography variant="h3" text="Thank you!" />
+            </>
+          )}
+
+          {rsvpStep === "ERROR" && (
+            <>
+              <Typography variant="h3" text="Error" style={{ color: "red" }} />
+              <Typography
+                variant="body"
+                text="Oops... something went wrong while submitting the RSVP. Joe's very sorry!"
+              />
+              <Typography
+                variant="body"
+                text="Please send us the RSVP directly instead to 07500 058253."
+              />
             </>
           )}
         </Form>

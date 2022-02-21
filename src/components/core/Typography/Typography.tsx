@@ -7,9 +7,17 @@ export interface Props {
   variant: "body" | "h1" | "h2" | "h3" | "h4" | "error";
   text: string;
   style?: CSSProperties;
+  fontStyle?: "regular" | "bold" | "italic";
+  smallCaps?: boolean;
 }
 
-const Typography = ({ variant, text, style }: Props): ReactElement => {
+const Typography = ({
+  variant,
+  text,
+  style,
+  fontStyle = "regular",
+  smallCaps = false,
+}: Props): ReactElement => {
   let VariantComponent: StyledComponentBase<
     keyof JSX.IntrinsicElements,
     Theme
@@ -33,7 +41,17 @@ const Typography = ({ variant, text, style }: Props): ReactElement => {
       break;
   }
 
-  return <VariantComponent style={{ ...style }}>{text}</VariantComponent>;
+  return (
+    <VariantComponent
+      style={{
+        ...style,
+        fontStyle,
+        fontVariant: smallCaps ? "small-caps" : "normal",
+      }}
+    >
+      {text}
+    </VariantComponent>
+  );
 };
 
 export default Typography;

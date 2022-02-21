@@ -2,7 +2,7 @@ import { FormEvent } from "react";
 
 export const submitRsvp = async (
   event: FormEvent<HTMLFormElement>
-): Promise<void> => {
+): Promise<Response> => {
   event.preventDefault();
 
   const formElements = Array.from(
@@ -19,11 +19,9 @@ export const submitRsvp = async (
     )
     .join("&");
 
-  await fetch("/", {
+  return fetch("/", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: urlEncodedForm,
-  }).catch(() => {
-    alert("Error occurred. Please try again.");
   });
 };

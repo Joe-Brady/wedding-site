@@ -8,7 +8,7 @@ export const H1 = styled("h1")`
 `;
 
 export const H2 = styled("h2")`
-  font-size: ${({ theme }) => theme.space(4)};
+  font-size: ${({ theme }) => theme.space(5)};
   font-weight: 500;
 `;
 
@@ -20,7 +20,6 @@ export const H3 = styled("h3")`
 export const H4 = styled("h4")`
   font-size: ${({ theme }) => theme.space(3)};
   font-weight: 300;
-  text-transform: uppercase;
 `;
 
 export const Error = styled("span")`

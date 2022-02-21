@@ -1,7 +1,15 @@
 import React, { ReactElement } from "react";
 import { PageUrl } from "../../../types";
 
-import { Body, Nav, NavLink, Main, HeadContainer, HeadImage } from "./styles";
+import {
+  Body,
+  Nav,
+  NavLink,
+  Main,
+  HeadContainer,
+  HeadImage,
+  HeadImageContainer,
+} from "./styles";
 
 interface Props {
   head: ReactElement;
@@ -11,7 +19,9 @@ interface Props {
 
 const Template = ({ children, head, headImageSrc }: Props): ReactElement => (
   <Body>
-    <HeadImage src={headImageSrc} />
+    <HeadImageContainer>
+      <HeadImage src={headImageSrc} />
+    </HeadImageContainer>
 
     <HeadContainer>
       <Nav>

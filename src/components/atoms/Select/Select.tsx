@@ -1,4 +1,4 @@
-import React, { ChangeEvent, ReactElement } from "react";
+import React, { ChangeEvent, ReactElement, useState } from "react";
 import styled from "styled-components";
 
 const StyledSelect = styled("select")`
@@ -34,32 +34,43 @@ export interface Props {
   onChange?: (event: ChangeEvent<HTMLSelectElement>) => void;
 }
 
-const Select = ({ name, options, onChange }: Props): ReactElement => (
-  <SelectContainer>
-    <StyledSelect name={name} onChange={onChange}>
-      {options.map((option) => (
-        <option key={option.value} value={option.value}>
-          {option.text}
-        </option>
-      ))}
-    </StyledSelect>
+const Select = ({ name, options, onChange }: Props): ReactElement => {
+  const [isNew, setIsNew] = useState(true);
 
-    <ArrowContainer>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 12 12"
-        width="12"
-        height="12"
+  return (
+    <SelectContainer>
+      <StyledSelect
+        name={name}
+        onChange={(e) => {
+          setIsNew(false);
+          if (onChange) onChange(e);
+        }}
       >
-        <g fill="#000000">
-          <path
-            d="M10.293,3.293,6,7.586,1.707,3.293A1,1,0,0,0,.293,4.707l5,5a1,1,0,0,0,1.414,0l5-5a1,1,0,1,0-1.414-1.414Z"
-            fill="#000000"
-          />
-        </g>
-      </svg>
-    </ArrowContainer>
-  </SelectContainer>
-);
+        {isNew && <option value="">Select</option>}
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.text}
+          </option>
+        ))}
+      </StyledSelect>
+
+      <ArrowContainer>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 12 12"
+          width="12"
+          height="12"
+        >
+          <g fill="#000000">
+            <path
+              d="M10.293,3.293,6,7.586,1.707,3.293A1,1,0,0,0,.293,4.707l5,5a1,1,0,0,0,1.414,0l5-5a1,1,0,1,0-1.414-1.414Z"
+              fill="#000000"
+            />
+          </g>
+        </svg>
+      </ArrowContainer>
+    </SelectContainer>
+  );
+};
 
 export default Select;
