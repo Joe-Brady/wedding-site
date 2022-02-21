@@ -40,6 +40,32 @@ const GlobalStyles = createGlobalStyle`
     0% {opacity:0;}
     100% {opacity:1;}
   }
+
+
+  @keyframes move {
+    25% {
+      opacity: 1;
+
+    }
+    33% {
+      opacity: 1;
+      transform: translateY(30px);
+    }
+    67% {
+      opacity: 1;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
+  }
+
+  @keyframes pulse {
+    to {
+      opacity: 1;
+    }
+  }
 `;
 
 export default GlobalStyles;

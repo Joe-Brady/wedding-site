@@ -26,9 +26,9 @@ export const Form = styled("form")`
 `;
 
 export const NamesContainer = styled("div")`
-  margin-top: 20rem;
+  margin-top: 26rem;
   @media (max-width: 983px) {
-    margin-top: 32.5%;
+    margin-top: 42%;
   }
   display: grid;
   grid-auto-flow: column;
