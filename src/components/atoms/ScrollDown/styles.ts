@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ScrollDownContainer = styled("div")`
   display: grid;
   grid-auto-flow: row;
-  margin: 2rem 0 8rem 0;
+  margin: 2rem 0 4rem 0;
   justify-content: center;
   opacity: 0;
   animation-name: fadeIn;
