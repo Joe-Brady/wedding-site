@@ -56,7 +56,7 @@ const Home = (): ReactElement => {
         <Typography variant="h2" text="RSVP" style={{ textAlign: "center" }} />
 
         <Form
-          name="RSVP"
+          name="RSVPTEST"
           method="POST"
           onSubmit={(e) => {
             submitRsvp(e).then((response) => {
