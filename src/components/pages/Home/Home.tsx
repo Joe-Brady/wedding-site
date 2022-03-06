@@ -77,7 +77,7 @@ const Home = (): ReactElement => {
               style={{ gridArea: "question", margin: 0, textAlign: "center" }}
             />
             <Select
-              name="Attending"
+              name="attending"
               options={[
                 { value: "Yes", text: "Yes" },
                 { value: "No", text: "No" },
@@ -106,7 +106,7 @@ const Home = (): ReactElement => {
               style={{ gridArea: "question", margin: 0, textAlign: "center" }}
             />
             <Select
-              name="Type of guest"
+              name="type_of_guest"
               options={[
                 { value: "Full day", text: "Full day" },
                 { value: "Evening", text: "Evening" },
@@ -147,7 +147,7 @@ const Home = (): ReactElement => {
             </div>
 
             <Select
-              name="Evening guest attending ceremony"
+              name="evening_guest_attending_ceremony"
               options={[
                 { value: "No", text: "No, evening only" },
                 { value: "Yes", text: "Yes, ceremony + evening" },
@@ -206,7 +206,7 @@ const Home = (): ReactElement => {
                 />
 
                 <TextInput
-                  name={`Full name for person ${index}`}
+                  name={`person_${index}_full_name`}
                   placeholder="e.g. John Smith"
                   required
                 />
@@ -219,29 +219,29 @@ const Home = (): ReactElement => {
                     />
 
                     <Checkbox
-                      name={`Dietary Requirement for person ${index}: Vegetarian`}
+                      name={`person_${index}_dietary_vegetarian`}
                       label="Vegetarian"
                     />
                     <Checkbox
-                      name={`Dietary Requirement for person ${index}: Vegan`}
+                      name={`person_${index}_dietary_vegan`}
                       label="Vegan"
                     />
 
                     <Checkbox
-                      name={`Dietary Requirement for person ${index}: Gluten intolerant`}
+                      name={`person_${index}_dietary_gluten_intolerant`}
                       label="Gluten free"
                     />
                     <Checkbox
-                      name={`Dietary Requirement for person ${index}: Nut free`}
+                      name={`person_${index}_dietary_nut_free`}
                       label="Nut free"
                     />
                     <Checkbox
-                      name={`Dietary Requirement for person ${index}: Dairy`}
+                      name={`person_${index}_dietary_dairy`}
                       label="Dairy free"
                     />
                     <br />
                     <TextInput
-                      name={`Dietary Requirement for person ${index}: Other`}
+                      name={`person_${index}_dietary_other`}
                       placeholder="Other (please specify)"
                     />
                   </div>
