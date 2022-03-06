@@ -56,7 +56,7 @@ const Home = (): ReactElement => {
         <Typography variant="h2" text="RSVP" style={{ textAlign: "center" }} />
 
         <Form
-          name="RSVPTEST"
+          name="RSVPFORM"
           method="POST"
           onSubmit={(e) => {
             submitRsvp(e).then((response) => {
@@ -68,7 +68,7 @@ const Home = (): ReactElement => {
             });
           }}
         >
-          <input type="hidden" name="form-name" value="RSVP" />
+          <input type="hidden" name="form-name" value="RSVPFORM" />
 
           <FormStage style={rsvpStep !== "CAN_YOU_ATTEND" ? hiddenStyle : {}}>
             <Typography

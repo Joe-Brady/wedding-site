@@ -5,12 +5,11 @@ export const submitRsvp = async (
 ): Promise<Response> => {
   event.preventDefault();
 
-  const formElements = Array.from(
+  const formElements = (Array.from(
     event.currentTarget.elements
-  ) as HTMLInputElement[];
+  ) as HTMLInputElement[]).filter((elem) => !!elem.value);
 
   const urlEncodedForm: string = formElements
-    .filter((elem: HTMLInputElement) => !!elem.value)
     .map(
       (element) =>
         encodeURIComponent(element.name) +
