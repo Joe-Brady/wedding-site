@@ -13,9 +13,10 @@ import {
 } from "./styles";
 import { submitRsvp } from "./utils";
 import Tick from "./Tick";
-import Checkbox from "../../atoms/Checkbox/Checkbox";
 import { HeadImage, HeadImageContainer } from "../styles";
 import ScrollDown from "../../atoms/ScrollDown/ScrollDown";
+import Checkbox from "../../atoms/Checkbox/Checkbox";
+import FormGroup from "@mui/material/FormGroup";
 
 interface Person {
   fullName: string;
@@ -218,27 +219,29 @@ const Home = (): ReactElement => {
                       text="Dietary requirements for this person:"
                     />
 
-                    <Checkbox
-                      name={`person_${index}_dietary_vegetarian`}
-                      label="Vegetarian"
-                    />
-                    <Checkbox
-                      name={`person_${index}_dietary_vegan`}
-                      label="Vegan"
-                    />
+                    <FormGroup>
+                      <Checkbox
+                        name={`person_${index}_dietary_vegetarian`}
+                        label="Vegetarian"
+                      />
+                      <Checkbox
+                        name={`person_${index}_dietary_vegan`}
+                        label="Vegan"
+                      />
+                      <Checkbox
+                        name={`person_${index}_dietary_gluten_free`}
+                        label="Gluten free"
+                      />
+                      <Checkbox
+                        name={`person_${index}_dietary_nut_free`}
+                        label="Nut free"
+                      />
+                      <Checkbox
+                        name={`person_${index}_dietary_dairy_free`}
+                        label="Dairy free"
+                      />
+                    </FormGroup>
 
-                    <Checkbox
-                      name={`person_${index}_dietary_gluten_intolerant`}
-                      label="Gluten free"
-                    />
-                    <Checkbox
-                      name={`person_${index}_dietary_nut_free`}
-                      label="Nut free"
-                    />
-                    <Checkbox
-                      name={`person_${index}_dietary_dairy`}
-                      label="Dairy free"
-                    />
                     <br />
                     <TextInput
                       name={`person_${index}_dietary_other`}

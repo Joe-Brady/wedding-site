@@ -1,30 +1,27 @@
-import React, { ReactElement } from "react";
-import styled from "styled-components";
-import Typography from "../../core/Typography/Typography";
-
-const InputContainer = styled("div")`
-  display: flex;
-  align-items: center;
-`;
-
-const Input = styled("input")`
-  border: 1px solid ${({ theme }) => theme.grey50};
-  margin-right: 1rem;
-  &[type="checkbox"] {
-    transform: scale(1.5);
-  }
-`;
+import React, { ReactElement, useState } from "react";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import CheckboxMUI from "@mui/material/Checkbox";
 
 export interface Props {
   name: string;
   label: string;
 }
 
-const Checkbox = ({ label, name }: Props): ReactElement => (
-  <InputContainer>
-    <Input type="checkbox" name={name} />
-    <Typography variant="body" text={label} />
-  </InputContainer>
-);
+const Checkbox = ({ label, name }: Props): ReactElement => {
+  const [checked, setChecked] = useState(false);
+
+  return (
+    <FormControlLabel
+      control={
+        <CheckboxMUI
+          name={name}
+          value={checked}
+          onChange={() => setChecked((currentChecked) => !currentChecked)}
+        />
+      }
+      label={label}
+    />
+  );
+};
 
 export default Checkbox;
