@@ -1,7 +1,6 @@
 import React, { useState, ReactElement } from "react";
 
 import Typography from "../../core/Typography/Typography";
-import TextInput from "../../atoms/TextInput/TextInput";
 import Button from "../../atoms/Button/Button";
 import Select from "../../atoms/Select/Select";
 import {
@@ -17,6 +16,7 @@ import { HeadImage, HeadImageContainer } from "../styles";
 import ScrollDown from "../../atoms/ScrollDown/ScrollDown";
 import Checkbox from "../../atoms/Checkbox/Checkbox";
 import FormGroup from "@mui/material/FormGroup";
+import TextField from "@mui/material/TextField";
 
 interface Person {
   fullName: string;
@@ -206,10 +206,11 @@ const Home = (): ReactElement => {
                   text="Full name (including surname):"
                 />
 
-                <TextInput
+                <TextField
                   name={`person_${index}_full_name`}
                   placeholder="e.g. John Smith"
                   required
+                  fullWidth
                 />
 
                 {eveningGuest === false && attending && (
@@ -243,9 +244,10 @@ const Home = (): ReactElement => {
                     </FormGroup>
 
                     <br />
-                    <TextInput
+                    <TextField
                       name={`person_${index}_dietary_other`}
                       placeholder="Other (please specify)"
+                      fullWidth
                     />
                   </div>
                 )}
