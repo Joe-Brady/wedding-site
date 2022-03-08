@@ -9,6 +9,7 @@ import {
   Form,
   NamesContainer,
   HomeContainer,
+  NavContainer,
 } from "./styles";
 import { submitRsvp } from "./utils";
 import Tick from "./Tick";
@@ -54,7 +55,27 @@ const Home = (): ReactElement => {
       <ScrollDown />
 
       <HomeContainer>
-        <Typography variant="h2" text="RSVP" style={{ textAlign: "center" }} />
+        <Typography
+          variant="h2"
+          text="Menu"
+          style={{ textAlign: "center", marginTop: "8rem" }}
+        />
+
+        <NavContainer>
+          <Typography variant="h4link" text="RSVP" href="#RSVP" />
+          <Typography variant="h4link" text="Travel" href="#TRAVEL" />
+          <Typography variant="h4link" text="Accommodation" href="#ACCOM" />
+          <Typography variant="h4link" text="Our Story" href="#STORY" />
+          <Typography variant="h4link" text="Contact Us" href="#CONTACT" />
+          <Typography variant="h4link" text="Our Map of Oxford" href="#MAP" />
+        </NavContainer>
+
+        <Typography
+          id="RSVP"
+          variant="h2"
+          text="RSVP"
+          style={{ textAlign: "center", marginTop: "8rem" }}
+        />
 
         <Form
           name="RSVPFORM"
@@ -178,15 +199,17 @@ const Home = (): ReactElement => {
                 style={{ margin: 0, marginBottom: "2rem", textAlign: "center" }}
               />
 
-              <Typography
-                variant="body"
-                text={
-                  attending
-                    ? "Click 'Add person' for each person on the invitation."
-                    : "Click 'Add person' for each person who can't come"
-                }
-                style={{ margin: 0, marginBottom: "2rem", textAlign: "center" }}
-              />
+              {!attending && (
+                <Typography
+                  variant="body"
+                  text="Click 'Add person' for each person who can't come"
+                  style={{
+                    margin: 0,
+                    marginBottom: "2rem",
+                    textAlign: "center",
+                  }}
+                />
+              )}
             </div>
 
             {people.map((person, index) => (
@@ -238,7 +261,7 @@ const Home = (): ReactElement => {
                         label="Nut free"
                       />
                       <Checkbox
-                        name={`person_${index}_dietary_dairy_free`}
+                        name={`person_${index}_dietary_dairy`}
                         label="Dairy free"
                       />
                     </FormGroup>
@@ -294,6 +317,59 @@ const Home = (): ReactElement => {
             </>
           )}
         </Form>
+
+        <Typography
+          id="TRAVEL"
+          variant="h2"
+          text="Travel"
+          style={{ textAlign: "center", marginTop: "8rem" }}
+        />
+
+        <Typography
+          id="ACCOM"
+          variant="h2"
+          text="Accommodation"
+          style={{ textAlign: "center", marginTop: "8rem" }}
+        />
+
+        <Typography
+          id="STORY"
+          variant="h2"
+          text="Our Story"
+          style={{ textAlign: "center", marginTop: "8rem" }}
+        />
+
+        <Typography
+          id="CONTACT"
+          variant="h2"
+          text="Contact Us"
+          style={{ textAlign: "center", marginTop: "8rem" }}
+        />
+
+        <Typography
+          id="MAP"
+          variant="h2"
+          text="Our Map of Oxford"
+          style={{ textAlign: "center", marginTop: "8rem" }}
+        />
+
+        <Typography
+          variant="h3"
+          text="Everything from restaurants and landmarks, to the locations of our favourite Oxford memories."
+          style={{
+            textAlign: "center",
+            width: "40rem",
+            maxWidth: "80%",
+            margin: "auto",
+            marginBottom: "2rem",
+          }}
+        />
+
+        <iframe
+          src="https://www.google.com/maps/d/u/0/embed?mid=1ryUwhQ-1Age4NVPcpsO7FURnSFa2SHE0&ehbc=2E312F"
+          width="100%"
+          height="600"
+        ></iframe>
       </HomeContainer>
     </div>
   );

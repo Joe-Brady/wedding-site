@@ -22,6 +22,16 @@ export const H4 = styled("h4")`
   font-weight: 300;
 `;
 
+export const H4Link = styled("a")`
+  font-size: ${({ theme }) => theme.space(3)};
+  font-weight: 300;
+  color: ${({ theme }) => theme.highlight};
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 export const Error = styled("span")`
   color: ${({ theme }) => theme.error};
 `;

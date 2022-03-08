@@ -35,6 +35,7 @@ const Password = ({ children }: Props): ReactElement => {
       <PasswordContainer>
         <Typography variant="h2" text="Enter the 4-digit PIN" />
         <TextField
+          type="number"
           placeholder="PIN"
           variant="outlined"
           value={password}
