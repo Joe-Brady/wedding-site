@@ -30,6 +30,7 @@ const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.dark};
     background-color: ${({ theme }) => theme.lightTint};
     overflow-x: hidden;
+    scroll-behavior: smooth;
   }
 
   a {

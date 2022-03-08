@@ -66,6 +66,7 @@ const Home = (): ReactElement => {
           <Typography variant="h4link" text="Travel" href="#TRAVEL" />
           <Typography variant="h4link" text="Accommodation" href="#ACCOM" />
           <Typography variant="h4link" text="Our Story" href="#STORY" />
+          <Typography variant="h4link" text="Photos" href="#PHOTOS" />
           <Typography variant="h4link" text="Contact Us" href="#CONTACT" />
           <Typography variant="h4link" text="Our Map of Oxford" href="#MAP" />
         </NavContainer>
@@ -336,6 +337,13 @@ const Home = (): ReactElement => {
           id="STORY"
           variant="h2"
           text="Our Story"
+          style={{ textAlign: "center", marginTop: "8rem" }}
+        />
+
+        <Typography
+          id="PHOTOS"
+          variant="h2"
+          text="Photos (check here after the wedding!)"
           style={{ textAlign: "center", marginTop: "8rem" }}
         />
 
