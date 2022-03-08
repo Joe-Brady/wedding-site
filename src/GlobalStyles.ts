@@ -29,6 +29,7 @@ const GlobalStyles = createGlobalStyle`
     font-weight: 400;
     color: ${({ theme }) => theme.dark};
     background-color: ${({ theme }) => theme.lightTint};
+    overflow-x: hidden;
   }
 
   a {
