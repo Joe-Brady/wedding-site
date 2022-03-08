@@ -43,9 +43,9 @@ export const HeadContainer = styled("div")`
 export const HeadImage = styled("img")`
   width: 80rem;
   max-width: 130%;
-  margin-top: -20rem;
+  margin-top: -11rem;
   @media (max-width: 983px) {
-    margin-top: -32.5%;
+    margin-top: -17.9%;
   }
 `;
 

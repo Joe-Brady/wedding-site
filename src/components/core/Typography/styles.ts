@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
-export const Body = styled("p")``;
+export const Body = styled("p")`
+  font-size: ${({ theme }) => theme.space(2)};
+  line-height ${({ theme }) => theme.space(3)};
+`;
 
 export const H1 = styled("h1")`
   font-size: ${({ theme }) => theme.space(8)};
@@ -15,6 +18,7 @@ export const H2 = styled("h2")`
 export const H3 = styled("h3")`
   font-size: ${({ theme }) => theme.space(3)};
   font-weight: 400;
+  margin-top: 3rem;
 `;
 
 export const H4 = styled("h4")`

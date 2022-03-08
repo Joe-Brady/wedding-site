@@ -49,6 +49,7 @@ export const HomeContainer = styled("div")`
   animation-delay: 2s;
   animation-duration: 2s;
   animation-fill-mode: forwards;
+  padding-top: 8rem;
 `;
 
 export const MapThumbs = styled("div")`
@@ -67,17 +68,65 @@ export const MapThumbs = styled("div")`
 `;
 
 export const NavContainer = styled("nav")`
-  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 20rem;
+  width: 100%;
   padding: 1rem 2rem;
   max-width: 100%;
   box-sizing: border-box;
   border: 1rem solid ${theme.highlight};
+  background-color: ${theme.lightTint};
   > * {
     margin: 1rem;
     white-space: nowrap;
+  }
+`;
+
+export const NavAndImage = styled("div")`
+  position: relative;
+  width: 20rem;
+  margin: auto;
+`;
+
+export const Tulip = styled("img")`
+  position: absolute;
+  z-index: -1;
+  left: -134%;
+  top: -70%;
+  transform: scale(0.7) rotate(-9deg);
+`;
+
+export const Leaf = styled("img")`
+  position: absolute;
+  z-index: -1;
+  left: -74%;
+  top: -22%;
+  transform: scale(0.7) rotate(72deg) scaleX(-1);
+`;
+
+export const TextBlock = styled("div")`
+  width: 35rem;
+  padding: 0 2rem;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: auto;
+  text-align: center;
+`;
+
+export const AccomContainer = styled("div")`
+  display: flex;
+  justify-content: center;
+
+  > div {
+    margin: 0 2rem;
+    > * {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 983px) {
+    flex-direction: column;
+    align-items: center;
   }
 `;

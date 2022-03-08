@@ -24,16 +24,21 @@ const Password = ({ children }: Props): ReactElement => {
     }
   }, [password]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [passwordEnteredCorrectly]);
+
   return passwordEnteredCorrectly ? (
     children
   ) : (
     <div>
       <HeadImageContainer>
-        <HeadImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1645363106/flowers_wlxnim.png" />
+        <HeadImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1646773057/flowers_zdwe3t.png" />
       </HeadImageContainer>
 
       <PasswordContainer>
         <Typography variant="h2" text="Enter the 4-digit PIN" />
+
         <TextField
           type="number"
           placeholder="PIN"
@@ -45,6 +50,20 @@ const Password = ({ children }: Props): ReactElement => {
               style: { textAlign: "center" },
             },
           }}
+        />
+
+        {password.length > 3 && password !== correctPassword && (
+          <Typography
+            variant="error"
+            text="Incorrect PIN"
+            style={{ marginTop: "1rem" }}
+          />
+        )}
+
+        <Typography
+          variant="body"
+          text="Hint: The date of our wedding in 'day day month month' format."
+          style={{ marginTop: "2rem" }}
         />
       </PasswordContainer>
     </div>

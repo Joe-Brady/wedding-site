@@ -10,6 +10,11 @@ import {
   NamesContainer,
   HomeContainer,
   NavContainer,
+  NavAndImage,
+  Tulip,
+  Leaf,
+  TextBlock,
+  AccomContainer,
 } from "./styles";
 import { submitRsvp } from "./utils";
 import Tick from "./Tick";
@@ -38,7 +43,7 @@ const Home = (): ReactElement => {
   return (
     <div>
       <HeadImageContainer>
-        <HeadImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1645363106/flowers_wlxnim.png" />
+        <HeadImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1646773057/flowers_zdwe3t.png" />
       </HeadImageContainer>
 
       <PageTitleContainer>
@@ -55,21 +60,19 @@ const Home = (): ReactElement => {
       <ScrollDown />
 
       <HomeContainer>
-        <Typography
-          variant="h2"
-          text="Menu"
-          style={{ textAlign: "center", marginTop: "8rem" }}
-        />
-
-        <NavContainer>
-          <Typography variant="h4link" text="RSVP" href="#RSVP" />
-          <Typography variant="h4link" text="Travel" href="#TRAVEL" />
-          <Typography variant="h4link" text="Accommodation" href="#ACCOM" />
-          <Typography variant="h4link" text="Our Story" href="#STORY" />
-          <Typography variant="h4link" text="Photos" href="#PHOTOS" />
-          <Typography variant="h4link" text="Contact Us" href="#CONTACT" />
-          <Typography variant="h4link" text="Our Map of Oxford" href="#MAP" />
-        </NavContainer>
+        <NavAndImage>
+          <Tulip src="https://res.cloudinary.com/dqqwahudr/image/upload/v1646774796/tulip_mevduy.png" />
+          <Leaf src="https://res.cloudinary.com/dqqwahudr/image/upload/v1646775769/leaf_y4g3xt.png" />
+          <NavContainer>
+            <Typography variant="h4link" text="RSVP" href="#RSVP" />
+            <Typography variant="h4link" text="Our Story" href="#STORY" />
+            <Typography variant="h4link" text="Photos" href="#PHOTOS" />
+            <Typography variant="h4link" text="Travel" href="#TRAVEL" />
+            <Typography variant="h4link" text="Accommodation" href="#ACCOM" />
+            <Typography variant="h4link" text="Contact Us" href="#CONTACT" />
+            <Typography variant="h4link" text="Our Map of Oxford" href="#MAP" />
+          </NavContainer>
+        </NavAndImage>
 
         <Typography
           id="RSVP"
@@ -88,6 +91,7 @@ const Home = (): ReactElement => {
               } else {
                 setRsvpStep("ERROR");
               }
+              document.querySelector("#RSVP")?.scrollIntoView();
             });
           }}
         >
@@ -235,6 +239,7 @@ const Home = (): ReactElement => {
                   placeholder="e.g. John Smith"
                   required
                   fullWidth
+                  style={{ marginBottom: "1rem" }}
                 />
 
                 {eveningGuest === false && attending && (
@@ -320,11 +325,71 @@ const Home = (): ReactElement => {
         </Form>
 
         <Typography
+          id="STORY"
+          variant="h2"
+          text="Our Story"
+          style={{ textAlign: "center", marginTop: "6rem" }}
+        />
+
+        <TextBlock>
+          <Typography variant="body" text="TODO" />
+        </TextBlock>
+
+        <Typography
+          id="PHOTOS"
+          variant="h2"
+          text="Photos"
+          style={{ textAlign: "center", marginTop: "8rem" }}
+        />
+
+        <Typography
+          id="PHOTOS"
+          variant="h3"
+          text="Check back here after the wedding!"
+          style={{
+            textAlign: "center",
+          }}
+        />
+
+        <Typography
           id="TRAVEL"
           variant="h2"
           text="Travel"
           style={{ textAlign: "center", marginTop: "8rem" }}
         />
+
+        <TextBlock>
+          <Typography variant="h3" text="Arriving by car" />
+
+          <Typography
+            variant="body"
+            text="Oxford is a tricky city to navigate by car! We strongly recommend using any of the three Park-and-Ride locations (Thornhill, Redbridge, Seacourt). Parking is great value, and there are regular buses to central Oxford."
+          />
+
+          <Typography
+            variant="body"
+            text="Alternatively, if you would like to park in central Oxford (and if your hotel doesn't have its own spaces, which is common), there are three main car parks we'd recommend: Westgate (the main shopping mall, this has the most space and is indoors), Oxpens (a small multi-storey), and Worcester Street (medium-size, outdoors). Expect to pay £25 or more for 24 hours, though!"
+          />
+
+          <Typography variant="h3" text="Arriving by train" />
+
+          <Typography
+            variant="body"
+            text="Oxford's train station is a 15-minute walk from the city centre. Buses are regular from just outside and many go via the centre."
+          />
+
+          <Typography variant="h3" text="Getting around the city" />
+
+          <Typography
+            variant="body"
+            text="Oxford is a fairly small city and easy enough to walk around - just mind the cobbles!"
+          />
+
+          <Typography
+            variant="body"
+            text="For anything outside the main area of central Oxford, Royal Cars are the best taxi service and great value (01865 777333). Download their app for an Uber-like experience. Buses are regular and reasonable value."
+          />
+        </TextBlock>
 
         <Typography
           id="ACCOM"
@@ -333,19 +398,35 @@ const Home = (): ReactElement => {
           style={{ textAlign: "center", marginTop: "8rem" }}
         />
 
-        <Typography
-          id="STORY"
-          variant="h2"
-          text="Our Story"
-          style={{ textAlign: "center", marginTop: "8rem" }}
-        />
+        <TextBlock>
+          <Typography
+            variant="h3"
+            text="There are a fair few hotels and AirBnBs around Oxfordshire. Here's a few hotels that we would recommend checking out first."
+          />
+        </TextBlock>
 
-        <Typography
-          id="PHOTOS"
-          variant="h2"
-          text="Photos (check here after the wedding!)"
-          style={{ textAlign: "center", marginTop: "8rem" }}
-        />
+        <AccomContainer>
+          <div>
+            <Typography variant="h3" text="Near the ceremony" />
+            <Typography variant="body" text="Premier Inn Oxford (££)" />
+            <Typography variant="body" text="Vanbrugh House Hotel (£££)" />
+            <Typography variant="body" text="Old Parsonage (££££)" />
+            <Typography variant="body" text="Old Bank Hotel (££££)" />
+          </div>
+
+          <div>
+            <Typography variant="h3" text="Near the party" />
+            <Typography variant="body" text="Travelodge Oxford Peartree (£)" />
+            <Typography variant="body" text="easyHotel Oxford (£)" />
+          </div>
+
+          <div>
+            <Typography variant="h3" text="Slightly further afield" />
+            <Typography variant="body" text="voco Oxford Spires (££)" />
+            <Typography variant="body" text="Jurys Inn Oxford (££)" />
+            <Typography variant="body" text="Holiday Inn Oxford (££)" />
+          </div>
+        </AccomContainer>
 
         <Typography
           id="CONTACT"
@@ -353,6 +434,16 @@ const Home = (): ReactElement => {
           text="Contact Us"
           style={{ textAlign: "center", marginTop: "8rem" }}
         />
+
+        <TextBlock>
+          <Typography
+            variant="h3"
+            text="Feel free to drop us a text or a WhatsApp message if you have any questions!"
+          />
+
+          <Typography variant="body" text="Joe: 07500 058253" />
+          <Typography variant="body" text="Jasmine: 07824 332447" />
+        </TextBlock>
 
         <Typography
           id="MAP"
@@ -363,7 +454,7 @@ const Home = (): ReactElement => {
 
         <Typography
           variant="h3"
-          text="Everything from restaurants and landmarks, to the locations of our favourite Oxford memories."
+          text="From restaurants and landmarks, to the locations of our favourite Oxford memories. Each point on the map has a story..."
           style={{
             textAlign: "center",
             width: "40rem",
