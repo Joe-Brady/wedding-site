@@ -4,6 +4,7 @@ import TextField from "@mui/material/TextField";
 import Typography from "../../core/Typography/Typography";
 import { PasswordContainer } from "./styles";
 import { HeadImage, HeadImageContainer } from "../styles";
+import { TextBlock } from "../Home/styles";
 
 interface Props {
   children: ReactElement;
@@ -52,19 +53,21 @@ const Password = ({ children }: Props): ReactElement => {
           }}
         />
 
-        {password.length > 3 && password !== correctPassword && (
-          <Typography
-            variant="error"
-            text="Incorrect PIN"
-            style={{ marginTop: "1rem" }}
-          />
-        )}
+        <TextBlock>
+          {password.length > 3 && password !== correctPassword && (
+            <Typography
+              variant="error"
+              text="Incorrect PIN"
+              style={{ marginTop: "1rem" }}
+            />
+          )}
 
-        <Typography
-          variant="body"
-          text="Hint: The date of our wedding in 'day day month month' format."
-          style={{ marginTop: "2rem" }}
-        />
+          <Typography
+            variant="body"
+            text="Hint: The date of our wedding in 'day day month month' format."
+            style={{ marginTop: "2rem" }}
+          />
+        </TextBlock>
       </PasswordContainer>
     </div>
   );
