@@ -130,3 +130,19 @@ export const AccomContainer = styled("div")`
     align-items: center;
   }
 `;
+
+export const StoryImage = styled("img")`
+  width: 20rem;
+  max-width: 100%;
+  margin: 0 auto 1rem auto;
+`;
+
+export const StoryImageTwoUp = styled("div")`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  padding-top: 1rem;
+  @media (max-width: 983px) {
+    grid-template-columns: 1fr;
+  }
+`;

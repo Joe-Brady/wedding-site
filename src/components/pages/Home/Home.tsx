@@ -15,6 +15,8 @@ import {
   Leaf,
   TextBlock,
   AccomContainer,
+  StoryImage,
+  StoryImageTwoUp,
 } from "./styles";
 import { submitRsvp } from "./utils";
 import Tick from "./Tick";
@@ -23,6 +25,7 @@ import ScrollDown from "../../atoms/ScrollDown/ScrollDown";
 import Checkbox from "../../atoms/Checkbox/Checkbox";
 import FormGroup from "@mui/material/FormGroup";
 import TextField from "@mui/material/TextField";
+import CardExpandable from "../../atoms/CardExpandable/CardExpandable";
 
 interface Person {
   fullName: string;
@@ -332,7 +335,66 @@ const Home = (): ReactElement => {
         />
 
         <TextBlock>
-          <Typography variant="body" text="TODO" />
+          <CardExpandable
+            collapsedContent={
+              <>
+                <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647201712/polaroid-venice-2_axqifx.png" />
+
+                <Typography
+                  variant="body"
+                  text="Joe and Jasmine were born in the same hospital, Southampton Princess Anne, two years apart."
+                />
+                <Typography
+                  variant="body"
+                  text="Jasmine grew up on the south coast and developed a passion for everything academic and art-related. She also spent a toe-numbing amount of time figure skating and enjoyed summers on the local beach, having barbecues and swinging from the most dangerous-looking trees she could find."
+                />
+
+                <StoryImageTwoUp>
+                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647200680/polaroid-early-band_kf93tp.png" />
+                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647200680/polaroid-early-band_kf93tp.png" />
+                </StoryImageTwoUp>
+
+                <Typography
+                  variant="body"
+                  text="Joe grew up near Bristol, loved maths and music, and played a lot of Irish music – both with his dad, and with his band One String Loose. He played as many gigs as he could get out of school for, mostly spending summers waking up in a tent at the next folk festival."
+                />
+
+                <Typography variant="h3" text="Click to read on..." />
+              </>
+            }
+            expandedContent={
+              <>
+                <Typography
+                  variant="body"
+                  text="Fast-forward to 2012. Jasmine had got a place at Oxford University, studying Classical Archaeology and Ancient History. Joe joined SAE Institute (School of Audio Engineering) just outside Oxford."
+                />
+
+                <StoryImageTwoUp>
+                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647200680/polaroid-somerville_crbyiz.png" />
+                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647200680/polaroid-sae_xius20.png" />
+                </StoryImageTwoUp>
+
+                <Typography
+                  variant="body"
+                  text="Joe’s university didn’t really put on a proper fresher’s week, so he got in touch with an old friend of his, Rowan, who he knew from a place called the Hibernia Centre in Avonmouth where Irish music was taught in an echoey community hall. Joe knew Rowan was in her second year at Oxford University (studying Classics) and would likely know the ins and outs of any University parties. As it happens, two weeks after the very first Michelmas term started, Rowan hosted a “Romans versus Barbarians” themed fancy-dress party in the Ioannou Classics centre and filled it with a whole host of lovely people, scooping cupfuls of probably-not-so-lovely alco-pop from a large bucket. Several hours and a few too many drinks in, Joe had made some great acquaintances in Uxue, Rachel, and Anu, who would later that same night introduce Joe to their friend Jasmine, who lived in the same hall as them in Somerville College."
+                />
+
+                <StoryImageTwoUp>
+                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647200680/polaroid-barbarian_xd8vhz.png" />
+                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647201519/polaroid-ball_fsktbu.png" />
+                </StoryImageTwoUp>
+
+                <Typography
+                  variant="body"
+                  text="They immediately clicked, and when Joe went home to his housemates in Fairacres Road that night, he said that he’d just met his dream girl. Nearly ten years later after some incredible times at University, Jasmine and Joe have made a home together in Brixton, where they have hopefully found a balance between enjoying everything London has to offer and watching Ru Paul on Netflix. Despite having spent two years working from home together, they are more in love than ever."
+                />
+                <Typography
+                  variant="body"
+                  text="Jasmine worked as an Assistant Curator for a few years at various London museums and galleries and is now nearing the end of her PhD, specialising in Italian Renaissance drawings. She has dreams to be a Curator of drawings, or ideally be director of a museum so that she can add more carrot cake to the café menu to satisfy Joe’s cravings. Joe learned to write code and is now a freelance software developer. He has dreams to write code for his own ideas, to travel the world, and to eat as much of Jasmine’s baking as possible."
+                />
+              </>
+            }
+          />
         </TextBlock>
 
         <Typography
