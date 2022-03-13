@@ -29,7 +29,7 @@ export const H4 = styled("h4")`
 export const H4Link = styled("a")`
   font-size: ${({ theme }) => theme.space(3)};
   font-weight: 300;
-  color: ${({ theme }) => theme.highlight};
+  color: ${({ theme }) => theme.dark};
   text-decoration: none;
   &:hover {
     text-decoration: underline;

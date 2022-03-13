@@ -17,6 +17,8 @@ import {
   AccomContainer,
   StoryImage,
   StoryImageTwoUp,
+  PolaroidGrid,
+  MapIcons,
 } from "./styles";
 import { submitRsvp } from "./utils";
 import Tick from "./Tick";
@@ -26,6 +28,7 @@ import Checkbox from "../../atoms/Checkbox/Checkbox";
 import FormGroup from "@mui/material/FormGroup";
 import TextField from "@mui/material/TextField";
 import CardExpandable from "../../atoms/CardExpandable/CardExpandable";
+import theme from "../../../theme";
 
 interface Person {
   fullName: string;
@@ -327,17 +330,17 @@ const Home = (): ReactElement => {
           )}
         </Form>
 
-        <Typography
-          id="STORY"
-          variant="h2"
-          text="Our Story"
-          style={{ textAlign: "center", marginTop: "6rem" }}
-        />
-
-        <TextBlock>
+        <TextBlock style={{ marginTop: "6rem" }}>
           <CardExpandable
             collapsedContent={
               <>
+                <Typography
+                  id="STORY"
+                  variant="h2"
+                  text="Our Story"
+                  style={{ textAlign: "center" }}
+                />
+
                 <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647201712/polaroid-venice-2_axqifx.png" />
 
                 <Typography
@@ -410,8 +413,25 @@ const Home = (): ReactElement => {
           text="Check back here after the wedding!"
           style={{
             textAlign: "center",
+            padding: "0 2rem",
           }}
         />
+
+        <Typography
+          variant="body"
+          text="In the meantime, here's a few (real 70's Polaroid) snaps from our trip to Oxford in January..."
+          style={{
+            textAlign: "center",
+            padding: "0 2rem",
+          }}
+        />
+
+        <PolaroidGrid>
+          <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647206415/oxford-radcam_vklc7f.png" />
+          <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647206414/oxford-bod_tu1rg0.png" />
+          <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647206416/oxford-gate_mfhwnv.png" />
+          <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647206414/oxford-bridge_pungjx.png" />
+        </PolaroidGrid>
 
         <Typography
           id="TRAVEL"
@@ -490,22 +510,35 @@ const Home = (): ReactElement => {
           </div>
         </AccomContainer>
 
-        <Typography
-          id="CONTACT"
-          variant="h2"
-          text="Contact Us"
-          style={{ textAlign: "center", marginTop: "8rem" }}
-        />
-
-        <TextBlock>
+        <div
+          style={{
+            padding: "2rem",
+            border: `1rem solid ${theme.highlight}`,
+            margin: "auto",
+            marginTop: "8rem",
+            paddingTop: "1rem",
+            width: "fit-content",
+            maxWidth: "100%",
+            boxSizing: "border-box",
+          }}
+        >
           <Typography
-            variant="h3"
-            text="Feel free to drop us a text or a WhatsApp message if you have any questions!"
+            id="CONTACT"
+            variant="h2"
+            text="Contact Us"
+            style={{ textAlign: "center" }}
           />
 
-          <Typography variant="body" text="Joe: 07500 058253" />
-          <Typography variant="body" text="Jasmine: 07824 332447" />
-        </TextBlock>
+          <TextBlock>
+            <Typography
+              variant="h3"
+              text="Feel free to drop us a text or a WhatsApp message if you have any questions!"
+            />
+
+            <Typography variant="body" text="Joe: 07500 058253" />
+            <Typography variant="body" text="Jasmine: 07824 332447" />
+          </TextBlock>
+        </div>
 
         <Typography
           id="MAP"
@@ -525,6 +558,17 @@ const Home = (): ReactElement => {
             marginBottom: "2rem",
           }}
         />
+
+        <Typography
+          variant="body"
+          text="Look for these icons to open the list of locations / go full screen..."
+          style={{ textAlign: "center", padding: "0 2rem" }}
+        />
+
+        <MapIcons>
+          <img src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647209016/list-icon_lqxhnw.png" />
+          <img src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647209016/full-screen-icon_guqwdw.png" />
+        </MapIcons>
 
         <iframe
           src="https://www.google.com/maps/d/u/0/embed?mid=1ryUwhQ-1Age4NVPcpsO7FURnSFa2SHE0&ehbc=2E312F"

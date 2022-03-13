@@ -134,15 +134,44 @@ export const AccomContainer = styled("div")`
 export const StoryImage = styled("img")`
   width: 20rem;
   max-width: 100%;
-  margin: 0 auto 1rem auto;
+  margin: 1rem auto;
 `;
 
 export const StoryImageTwoUp = styled("div")`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
-  padding-top: 1rem;
   @media (max-width: 983px) {
     grid-template-columns: 1fr;
+  }
+`;
+
+export const PolaroidGrid = styled("div")`
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  width: 80rem;
+  max-width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+  > img {
+    width: 100%;
+  }
+  @media (max-width: 983px) {
+    grid-template-columns: 1fr 1fr;
+  }
+`;
+
+export const MapIcons = styled("div")`
+  display: grid;
+  grid-template-columns: 2rem 2rem;
+  grid-gap: 1rem;
+  padding: 2rem;
+  padding-top: 0;
+  justify-content: center;
+  > img {
+    width: 100%;
+    height: 100%;
   }
 `;

@@ -38,7 +38,11 @@ const Password = ({ children }: Props): ReactElement => {
       </HeadImageContainer>
 
       <PasswordContainer>
-        <Typography variant="h2" text="Enter the 4-digit PIN" />
+        <Typography
+          variant="h2"
+          text="Enter the 4-digit PIN"
+          style={{ textAlign: "center", padding: "0 2rem" }}
+        />
 
         <TextField
           type="number"

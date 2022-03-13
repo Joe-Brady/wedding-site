@@ -36,7 +36,13 @@ const CardExpandable = ({
   };
 
   return (
-    <Card style={{ backgroundColor: theme.lightTint, cursor: "pointer" }}>
+    <div
+      style={{
+        backgroundColor: theme.lightTint,
+        cursor: "pointer",
+        border: `1rem solid ${theme.highlight}`,
+      }}
+    >
       <CardContent onClick={handleExpandClick}>
         {collapsedContent}
 
@@ -52,7 +58,7 @@ const CardExpandable = ({
           <CardContent>{expandedContent}</CardContent>
         </Collapse>
       </CardContent>
-    </Card>
+    </div>
   );
 };
 
