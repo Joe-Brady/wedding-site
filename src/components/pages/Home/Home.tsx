@@ -341,7 +341,7 @@ const Home = (): ReactElement => {
                   style={{ textAlign: "center" }}
                 />
 
-                <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647201712/polaroid-venice-2_axqifx.png" />
+                <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647384950/polaroid-venice-3_ieyvub.png" />
 
                 <Typography
                   variant="body"
@@ -352,39 +352,47 @@ const Home = (): ReactElement => {
                   text="Jasmine grew up on the south coast and developed a passion for everything academic and art-related. She also spent a toe-numbing amount of time figure skating and enjoyed summers on the local beach, having barbecues and swinging from the most dangerous-looking trees she could find."
                 />
 
-                <StoryImageTwoUp>
-                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647200680/polaroid-early-band_kf93tp.png" />
-                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647200680/polaroid-early-band_kf93tp.png" />
-                </StoryImageTwoUp>
-
                 <Typography
                   variant="body"
                   text="Joe grew up near Bristol, loved maths and music, and played a lot of Irish music – both with his dad, and with his band One String Loose. He played as many gigs as he could get out of school for, mostly spending summers waking up in a tent at the next folk festival."
                 />
 
-                <Typography variant="h3" text="Click to read on..." />
+                <StoryImageTwoUp>
+                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647386044/jasmine-drink_gqtgh1.png" />
+                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647386044/joe-young_uceumx.png" />
+                </StoryImageTwoUp>
               </>
             }
             expandedContent={
               <>
+                {/* <StoryImageTwoUp>
+                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647387156/joe-whistle_jkcqk6.png" />
+                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647387156/joe-whistle_jkcqk6.png" />
+                </StoryImageTwoUp> */}
+
                 <Typography
                   variant="body"
                   text="Fast-forward to 2012. Jasmine had got a place at Oxford University, studying Classical Archaeology and Ancient History. Joe joined SAE Institute (School of Audio Engineering) just outside Oxford."
                 />
 
                 <StoryImageTwoUp>
-                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647200680/polaroid-somerville_crbyiz.png" />
-                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647200680/polaroid-sae_xius20.png" />
+                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647384945/polaroid-somerville_crpihe.png" />
+                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647384950/polaroid-sae_zewe48.png" />
                 </StoryImageTwoUp>
 
                 <Typography
                   variant="body"
-                  text="Joe’s university didn’t really put on a proper fresher’s week, so he got in touch with an old friend of his, Rowan, who he knew from a place called the Hibernia Centre in Avonmouth where Irish music was taught in an echoey community hall. Joe knew Rowan was in her second year at Oxford University (studying Classics) and would likely know the ins and outs of any University parties. As it happens, two weeks after the very first Michelmas term started, Rowan hosted a “Romans versus Barbarians” themed fancy-dress party in the Ioannou Classics centre and filled it with a whole host of lovely people, scooping cupfuls of probably-not-so-lovely alco-pop from a large bucket. Several hours and a few too many drinks in, Joe had made some great acquaintances in Uxue, Rachel, and Anu, who would later that same night introduce Joe to their friend Jasmine, who lived in the same hall as them in Somerville College."
+                  text="Joe’s university didn’t really put on a proper fresher’s week, so he got in touch with an old friend of his, Rowan, who he knew from a place called the Hibernia Centre in Avonmouth where Irish music was taught in an echoey community hall. Joe knew Rowan was in her second year at Oxford University (studying Classics) and would likely know the ins and outs of any University parties."
+                />
+
+                <Typography
+                  variant="body"
+                  text="As it happens, two weeks after the very first Michelmas term started, Rowan hosted a “Romans versus Barbarians” themed fancy-dress party in the Ioannou Classics centre and filled it with a whole host of lovely people, scooping cupfuls of probably-not-so-lovely alco-pop from a large bucket. Several hours and a few too many drinks in, Joe had made some great acquaintances in Uxue, Rachel, and Anu, who would later that same night introduce Joe to their friend Jasmine, who lived in the same hall as them in Somerville College."
                 />
 
                 <StoryImageTwoUp>
-                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647200680/polaroid-barbarian_xd8vhz.png" />
-                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647201519/polaroid-ball_fsktbu.png" />
+                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647384945/polaroid-ball_rndrpe.png" />
+                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647384946/polaroid-barbarian_xmh9jm.png" />
                 </StoryImageTwoUp>
 
                 <Typography
@@ -393,7 +401,7 @@ const Home = (): ReactElement => {
                 />
                 <Typography
                   variant="body"
-                  text="Jasmine worked as an Assistant Curator for a few years at various London museums and galleries and is now nearing the end of her PhD, specialising in Italian Renaissance drawings. She has dreams to be a Curator of drawings, or ideally be director of a museum so that she can add more carrot cake to the café menu to satisfy Joe’s cravings. Joe learned to write code and is now a freelance software developer. He has dreams to write code for his own ideas, to travel the world, and to eat as much of Jasmine’s baking as possible."
+                  text="Jasmine worked as an Assistant Curator for a few years at various London museums and galleries and is now nearing the end of her PhD, specialising in Italian Renaissance drawings. She has dreams to be a Curator of drawings, or ideally be director of a museum so that she can add more carrot cake to the café menu. Joe learned to write code and is now a freelance software developer. He has dreams to write code for his own ideas, to travel the world, and to eat as much of Jasmine’s baking as possible."
                 />
               </>
             }
@@ -482,7 +490,7 @@ const Home = (): ReactElement => {
 
         <TextBlock>
           <Typography
-            variant="h3"
+            variant="body"
             text="There are a fair few hotels and AirBnBs around Oxfordshire. Here's a few hotels that we would recommend checking out first."
           />
         </TextBlock>

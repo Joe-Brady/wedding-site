@@ -106,7 +106,7 @@ export const Leaf = styled("img")`
 `;
 
 export const TextBlock = styled("div")`
-  width: 35rem;
+  width: 40rem;
   padding: 0 2rem;
   max-width: 100%;
   box-sizing: border-box;

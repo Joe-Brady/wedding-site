@@ -2,8 +2,9 @@ import React, { ReactElement, useState } from "react";
 import IconButton, { IconButtonProps } from "@mui/material/IconButton";
 import { styled } from "@mui/material/styles";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { Card, CardContent, Collapse } from "@mui/material";
-import theme from "../../../theme";
+import { CardContent, Collapse } from "@mui/material";
+import Typography from "../../core/Typography/Typography";
+import { ExpandContainer } from "./styles";
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -36,26 +37,31 @@ const CardExpandable = ({
   };
 
   return (
-    <div
-      style={{
-        backgroundColor: theme.lightTint,
-        cursor: "pointer",
-        border: `1rem solid ${theme.highlight}`,
-      }}
-    >
-      <CardContent onClick={handleExpandClick}>
+    <div>
+      <CardContent>
         {collapsedContent}
 
-        <ExpandMore
-          expand={expanded}
-          aria-expanded={expanded}
-          aria-label="show more"
+        <ExpandContainer
+          style={{ cursor: "pointer" }}
+          onClick={handleExpandClick}
         >
-          <ExpandMoreIcon />
-        </ExpandMore>
+          <Typography
+            variant="h3"
+            text={expanded ? "Click to minimise" : "Click to read on..."}
+            style={{ marginTop: "1rem" }}
+          />
+
+          <ExpandMore
+            expand={expanded}
+            aria-expanded={expanded}
+            aria-label="show more"
+          >
+            <ExpandMoreIcon />
+          </ExpandMore>
+        </ExpandContainer>
 
         <Collapse in={expanded} timeout="auto" unmountOnExit>
-          <CardContent>{expandedContent}</CardContent>
+          {expandedContent}
         </Collapse>
       </CardContent>
     </div>

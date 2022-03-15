@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Body = styled("p")`
-  font-size: ${({ theme }) => theme.space(2)};
-  line-height ${({ theme }) => theme.space(3)};
+  font-size: ${({ theme }) => theme.space(2.2)};
+  line-height ${({ theme }) => theme.space(3.4)};
 `;
 
 export const H1 = styled("h1")`
