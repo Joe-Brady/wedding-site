@@ -356,15 +356,15 @@ const Home = (): ReactElement => {
                   variant="body"
                   text="Joe grew up near Bristol, loved maths and music, and played a lot of Irish music – both with his dad, and with his band One String Loose. He played as many gigs as he could get out of school for, mostly spending summers waking up in a tent at the next folk festival."
                 />
-
-                <StoryImageTwoUp>
-                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647386044/jasmine-drink_gqtgh1.png" />
-                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647386044/joe-young_uceumx.png" />
-                </StoryImageTwoUp>
               </>
             }
             expandedContent={
               <>
+                <StoryImageTwoUp>
+                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647386044/jasmine-drink_gqtgh1.png" />
+                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647386044/joe-young_uceumx.png" />
+                </StoryImageTwoUp>
+
                 {/* <StoryImageTwoUp>
                   <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647387156/joe-whistle_jkcqk6.png" />
                   <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647387156/joe-whistle_jkcqk6.png" />
@@ -518,34 +518,36 @@ const Home = (): ReactElement => {
           </div>
         </AccomContainer>
 
-        <div
-          style={{
-            padding: "2rem",
-            border: `1rem solid ${theme.highlight}`,
-            margin: "auto",
-            marginTop: "8rem",
-            paddingTop: "1rem",
-            width: "fit-content",
-            maxWidth: "100%",
-            boxSizing: "border-box",
-          }}
-        >
-          <Typography
-            id="CONTACT"
-            variant="h2"
-            text="Contact Us"
-            style={{ textAlign: "center" }}
-          />
-
-          <TextBlock>
+        <div style={{ padding: "1rem" }}>
+          <div
+            style={{
+              padding: "2rem",
+              border: `1rem solid ${theme.highlight}`,
+              margin: "auto",
+              marginTop: "8rem",
+              paddingTop: "1rem",
+              width: "fit-content",
+              maxWidth: "100%",
+              boxSizing: "border-box",
+            }}
+          >
             <Typography
-              variant="h3"
-              text="Feel free to drop us a text or a WhatsApp message if you have any questions!"
+              id="CONTACT"
+              variant="h2"
+              text="Contact Us"
+              style={{ textAlign: "center" }}
             />
 
-            <Typography variant="body" text="Joe: 07500 058253" />
-            <Typography variant="body" text="Jasmine: 07824 332447" />
-          </TextBlock>
+            <TextBlock>
+              <Typography
+                variant="h3"
+                text="Feel free to drop us a text or a WhatsApp message if you have any questions!"
+              />
+
+              <Typography variant="body" text="Joe: 07500 058253" />
+              <Typography variant="body" text="Jasmine: 07824 332447" />
+            </TextBlock>
+          </div>
         </div>
 
         <Typography
