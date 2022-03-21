@@ -40,13 +40,13 @@ const Password = ({ children }: Props): ReactElement => {
       <PasswordContainer>
         <Typography
           variant="h2"
-          text="Enter the 4-digit PIN"
-          style={{ textAlign: "center", padding: "0 2rem" }}
+          text="Enter the 4-digit code"
+          style={{ textAlign: "center", padding: "0 1rem" }}
         />
 
         <TextField
           type="number"
-          placeholder="PIN"
+          placeholder="E.g. 1234"
           variant="outlined"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
@@ -61,7 +61,7 @@ const Password = ({ children }: Props): ReactElement => {
           {password.length > 3 && password !== correctPassword && (
             <Typography
               variant="error"
-              text="Incorrect PIN"
+              text="Incorrect code"
               style={{ marginTop: "1rem" }}
             />
           )}
