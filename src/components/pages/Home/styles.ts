@@ -93,7 +93,7 @@ export const Tulip = styled("img")`
   position: absolute;
   z-index: -1;
   left: -134%;
-  top: -70%;
+  top: -62%;
   transform: scale(0.7) rotate(-9deg);
 `;
 
@@ -101,7 +101,7 @@ export const Leaf = styled("img")`
   position: absolute;
   z-index: -1;
   left: -74%;
-  top: -22%;
+  top: -14%;
   transform: scale(0.7) rotate(72deg) scaleX(-1);
 `;
 
