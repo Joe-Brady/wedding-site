@@ -34,7 +34,7 @@ const Password = ({ children }: Props): ReactElement => {
   ) : (
     <div>
       <HeadImageContainer>
-        <HeadImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1646773057/flowers_zdwe3t.png" />
+        <HeadImage src="https://res.cloudinary.com/dqqwahudr/image/upload/c_scale,w_1280/v1646773057/flowers_zdwe3t.png" />
       </HeadImageContainer>
 
       <PasswordContainer>

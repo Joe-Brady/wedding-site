@@ -49,7 +49,7 @@ const Home = (): ReactElement => {
   return (
     <div>
       <HeadImageContainer>
-        <HeadImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1646773057/flowers_zdwe3t.png" />
+        <HeadImage src="https://res.cloudinary.com/dqqwahudr/image/upload/c_scale,w_1280/v1646773057/flowers_zdwe3t.png" />
       </HeadImageContainer>
 
       <PageTitleContainer>
@@ -67,8 +67,8 @@ const Home = (): ReactElement => {
 
       <HomeContainer>
         <NavAndImage>
-          <Tulip src="https://res.cloudinary.com/dqqwahudr/image/upload/v1646774796/tulip_mevduy.png" />
-          <Leaf src="https://res.cloudinary.com/dqqwahudr/image/upload/v1646775769/leaf_y4g3xt.png" />
+          <Tulip src="https://res.cloudinary.com/dqqwahudr/image/upload/c_scale,w_761/v1646774796/tulip_mevduy.png" />
+          <Leaf src="https://res.cloudinary.com/dqqwahudr/image/upload/c_scale,w_349/v1646775769/leaf_y4g3xt.png" />
           <NavContainer>
             <Typography variant="h4link" text="RSVP" href="#RSVP" />
             <Typography variant="h4link" text="Our Story" href="#STORY" />
@@ -206,7 +206,7 @@ const Home = (): ReactElement => {
                 text={
                   attending
                     ? "Who is attending?"
-                    : "We're sorry you can't make it! Hopefully we can see you another time."
+                    : "We are sorry you can't make it! Hopefully we can see you another time."
                 }
                 style={{ margin: 0, marginBottom: "2rem", textAlign: "center" }}
               />
@@ -321,7 +321,7 @@ const Home = (): ReactElement => {
               <Typography variant="h3" text="Error" style={{ color: "red" }} />
               <Typography
                 variant="body"
-                text="Oops... something went wrong while submitting the RSVP. Joe's very sorry!"
+                text="Oops... something went wrong while submitting the RSVP. Joe is very sorry!"
               />
               <Typography
                 variant="body"
@@ -342,7 +342,7 @@ const Home = (): ReactElement => {
                   style={{ textAlign: "center" }}
                 />
 
-                <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647384950/polaroid-venice-3_ieyvub.png" />
+                <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/c_scale,w_600/v1647384950/polaroid-venice-3_ieyvub.png" />
 
                 <Typography
                   variant="body"
@@ -362,8 +362,8 @@ const Home = (): ReactElement => {
             expandedContent={
               <>
                 <StoryImageTwoUp>
-                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647386044/jasmine-drink_gqtgh1.png" />
-                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647386044/joe-young_uceumx.png" />
+                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/c_scale,w_477/v1647386044/jasmine-drink_gqtgh1.png" />
+                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/c_scale,w_477/v1647386044/joe-young_uceumx.png" />
                 </StoryImageTwoUp>
 
                 {/* <StoryImageTwoUp>
@@ -377,8 +377,8 @@ const Home = (): ReactElement => {
                 />
 
                 <StoryImageTwoUp>
-                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647384945/polaroid-somerville_crpihe.png" />
-                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647384950/polaroid-sae_zewe48.png" />
+                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/c_scale,w_477/v1647384945/polaroid-somerville_crpihe.png" />
+                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/c_scale,w_477/v1647384950/polaroid-sae_zewe48.png" />
                 </StoryImageTwoUp>
 
                 <Typography
@@ -392,8 +392,8 @@ const Home = (): ReactElement => {
                 />
 
                 <StoryImageTwoUp>
-                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647384945/polaroid-ball_rndrpe.png" />
-                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647384946/polaroid-barbarian_xmh9jm.png" />
+                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/c_scale,w_477/v1647384945/polaroid-ball_rndrpe.png" />
+                  <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/c_scale,w_477/v1647384946/polaroid-barbarian_xmh9jm.png" />
                 </StoryImageTwoUp>
 
                 <Typography
@@ -409,108 +409,106 @@ const Home = (): ReactElement => {
           />
         </TextBlock>
 
-        <div
-          style={{
-            padding: "2rem",
-            border: `1rem solid ${theme.highlight}`,
-            margin: "auto",
-            marginTop: "6rem",
-            paddingTop: "1rem",
-            width: "fit-content",
-            maxWidth: "100%",
-            boxSizing: "border-box",
-          }}
-        >
-          <Typography
-            id="ON_THE_DAY"
-            variant="h2"
-            text="On the Day"
-            style={{ textAlign: "center" }}
-          />
+        <div style={{ padding: "1rem" }}>
+          <div
+            style={{
+              padding: "2rem 1rem",
+              border: `1rem solid ${theme.highlight}`,
+              margin: "auto",
+              marginTop: "6rem",
+              paddingTop: "1rem",
+              width: "fit-content",
+              maxWidth: "100%",
+              boxSizing: "border-box",
+            }}
+          >
+            <Typography
+              id="ON_THE_DAY"
+              variant="h2"
+              text="On the Day"
+              style={{ textAlign: "center" }}
+            />
 
-          <div style={{ textAlign: "center" }}>
+            <div style={{ textAlign: "center" }}>
+              <Typography
+                variant="h3"
+                text="The Ceremony"
+                style={{
+                  textAlign: "center",
+                  padding: "1rem",
+                  paddingBottom: 0,
+                }}
+              />
+
+              <Typography
+                variant="body"
+                text="Convocation House"
+                style={{ margin: 0 }}
+              />
+              <Typography
+                variant="body"
+                text="Bodleian Library"
+                style={{ margin: 0 }}
+              />
+              <Typography
+                variant="body"
+                text="Broad Street"
+                style={{ margin: 0 }}
+              />
+              <Typography variant="body" text="Oxford" style={{ margin: 0 }} />
+              <Typography variant="body" text="OX1 3BG" style={{ margin: 0 }} />
+
+              <a href="https://goo.gl/maps/Ew48J6vdHQaqtT1y9" target="_blank">
+                <Typography variant="body" text="Link to location" />
+              </a>
+
+              <Typography
+                variant="body"
+                text="If you are attending the ceremony, arrive between 12 noon and 12:30 at Convocation House, which is a room inside the Bodleian Library building. To get there, start on Broad Street, then climb the steps or ramp to the courtyard. Go past the Sheldonian Theatre and look for the door with our signs up!"
+                style={{
+                  textAlign: "center",
+                  padding: "1rem",
+                  maxWidth: "40rem",
+                  margin: "auto",
+                }}
+              />
+            </div>
+
             <Typography
               variant="h3"
-              text="The Ceremony"
-              style={{ textAlign: "center", padding: "2rem" }}
+              text="The Reception"
+              style={{ textAlign: "center", padding: "1rem", paddingBottom: 0 }}
             />
 
-            <Typography
-              variant="body"
-              text="Convocation House"
-              style={{ margin: 0, fontWeight: "bold" }}
-            />
-            <Typography
-              variant="body"
-              text="Bodleian Library"
-              style={{ margin: 0 }}
-            />
-            <Typography
-              variant="body"
-              text="Broad Street"
-              style={{ margin: 0 }}
-            />
-            <Typography variant="body" text="Oxford" style={{ margin: 0 }} />
-            <Typography variant="body" text="OX1 3BG" style={{ margin: 0 }} />
-
-            <Typography
-              variant="body"
-              text="If you are attending the ceremony, arrive between 12 noon and 12:30 at Convocation House, which is a room inside the Bodleian Library building. To get there, start on Broad Street, then climb the steps or ramp to the courtyard. Go past the Sheldonian Theatre and look for the door with our signs up!"
-              style={{
-                textAlign: "center",
-                padding: "2rem",
-                maxWidth: "40rem",
-                margin: "auto",
-              }}
-            />
-
-            <a href="https://goo.gl/maps/Ew48J6vdHQaqtT1y9" target="_blank">
+            <div style={{ textAlign: "center" }}>
               <Typography
                 variant="body"
-                text="Link to location"
+                text="The Perch events marquee (in the garden)"
                 style={{ margin: 0 }}
               />
-            </a>
-          </div>
-
-          <Typography
-            variant="h3"
-            text="The Reception"
-            style={{ textAlign: "center", padding: "2rem" }}
-          />
-
-          <div style={{ textAlign: "center" }}>
-            <Typography
-              variant="body"
-              text="The Perch events marquee (in the garden)"
-              style={{ margin: 0, fontWeight: "bold" }}
-            />
-            <Typography
-              variant="body"
-              text="Binsey Lane"
-              style={{ margin: 0 }}
-            />
-            <Typography variant="body" text="Oxford" style={{ margin: 0 }} />
-            <Typography variant="body" text="OX2 0NG" style={{ margin: 0 }} />
-
-            <Typography
-              variant="body"
-              text="If you are a full-day guest, we will take you to The Perch after the ceremony. If you are an evening guest, your best bet is to get a taxi. The Perch is a 15-minute drive from central Oxford and has very limited parking on site, so give Royal Cars a call in advance!"
-              style={{
-                textAlign: "center",
-                padding: "2rem",
-                maxWidth: "40rem",
-                margin: "auto",
-              }}
-            />
-
-            <a href="https://goo.gl/maps/fYNK6GqS1c9Ysozg6" target="_blank">
               <Typography
                 variant="body"
-                text="Link to location"
+                text="Binsey Lane"
                 style={{ margin: 0 }}
               />
-            </a>
+              <Typography variant="body" text="Oxford" style={{ margin: 0 }} />
+              <Typography variant="body" text="OX2 0NG" style={{ margin: 0 }} />
+
+              <a href="https://goo.gl/maps/fYNK6GqS1c9Ysozg6" target="_blank">
+                <Typography variant="body" text="Link to location" />
+              </a>
+
+              <Typography
+                variant="body"
+                text="If you are a full-day guest, we will take you to The Perch after the ceremony. If you are an evening guest, your best bet is to get a taxi. The Perch is a 15-minute drive from central Oxford and has very limited parking on site, so give Royal Cars a call in advance!"
+                style={{
+                  textAlign: "center",
+                  padding: "1rem",
+                  maxWidth: "40rem",
+                  margin: "auto",
+                }}
+              />
+            </div>
           </div>
         </div>
 
@@ -531,7 +529,7 @@ const Home = (): ReactElement => {
 
           <Typography
             variant="body"
-            text="Alternatively, if you would like to park in central Oxford (and if your hotel doesn't have its own spaces, which is common), there are three main car parks we'd recommend: Westgate (the main shopping mall, this has the most space and is indoors), Oxpens (a small multi-storey), and Worcester Street (medium-size, outdoors). Expect to pay £25 or more for 24 hours, though!"
+            text="Alternatively, if you would like to park in central Oxford (and if your hotel does not have its own spaces, which is common), there are three main car parks we would recommend: Westgate (the main shopping mall, this has the most space and is indoors), Oxpens (a small multi-storey), and Worcester Street (medium-size, outdoors). Expect to pay £25 or more for 24 hours, though!"
           />
 
           <Typography variant="h3" text="Arriving by train" />
@@ -564,7 +562,7 @@ const Home = (): ReactElement => {
         <TextBlock>
           <Typography
             variant="body"
-            text="There are a fair few hotels and AirBnBs around Oxfordshire. Here's a few hotels that we would recommend checking out first."
+            text="There are a fair few hotels and AirBnBs around Oxfordshire. Here are a few hotels that we would recommend checking out first."
           />
         </TextBlock>
 
@@ -594,7 +592,7 @@ const Home = (): ReactElement => {
         <div style={{ padding: "1rem" }}>
           <div
             style={{
-              padding: "2rem",
+              padding: "2rem 1rem",
               border: `1rem solid ${theme.highlight}`,
               margin: "auto",
               marginTop: "8rem",
@@ -613,7 +611,7 @@ const Home = (): ReactElement => {
 
             <TextBlock>
               <Typography
-                variant="h3"
+                variant="body"
                 text="Feel free to drop us a text or a WhatsApp message if you have any questions!"
               />
 
@@ -635,24 +633,23 @@ const Home = (): ReactElement => {
           text="Check back here after the wedding!"
           style={{
             textAlign: "center",
-            padding: "0 2rem",
+            padding: "0 1rem",
           }}
         />
-
         <Typography
           variant="body"
-          text="In the meantime, here's a few (real 70's Polaroid) snaps from our trip to Oxford in January..."
+          text="In the meantime, here are a few snaps from our trip to Oxford in January..."
           style={{
             textAlign: "center",
-            padding: "0 2rem",
+            padding: "0 1rem",
           }}
         />
 
         <PolaroidGrid>
-          <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647206415/oxford-radcam_vklc7f.png" />
-          <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647206414/oxford-bod_tu1rg0.png" />
-          <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647206416/oxford-gate_mfhwnv.png" />
-          <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/v1647206414/oxford-bridge_pungjx.png" />
+          <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/c_scale,w_500/v1647206415/oxford-radcam_vklc7f.png" />
+          <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/c_scale,w_500/v1647206414/oxford-bod_tu1rg0.png" />
+          <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/c_scale,w_500/v1647206416/oxford-gate_mfhwnv.png" />
+          <StoryImage src="https://res.cloudinary.com/dqqwahudr/image/upload/c_scale,w_500/v1647206414/oxford-bridge_pungjx.png" />
         </PolaroidGrid>
 
         <Typography
@@ -663,8 +660,8 @@ const Home = (): ReactElement => {
         />
 
         <Typography
-          variant="h3"
-          text="From restaurants and landmarks, to the locations of our favourite Oxford memories. Each point on the map has a story..."
+          variant="body"
+          text="Discover restaurants, landmarks, and the locations of our favourite Oxford memories..."
           style={{
             textAlign: "center",
             width: "40rem",
