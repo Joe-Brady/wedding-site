@@ -398,7 +398,7 @@ const Home = (): ReactElement => {
 
                 <Typography
                   variant="body"
-                  text="They immediately clicked, and when Joe went home to his housemates in Fairacres Road that night, he said that he’d just met his dream girl. Nearly ten years later after some incredible times at University, Jasmine and Joe have made a home together in Brixton, where they have hopefully found a balance between enjoying everything London has to offer and watching Ru Paul on Netflix. Despite having spent two years working from home together, they are more in love than ever."
+                  text="They immediately clicked. When Joe went home to his housemates in Fairacres Road that night, he told them that he’d just met his dream girl. Nearly ten years later after some incredible times at University, Jasmine and Joe have made a home together in Brixton, where they have hopefully found a balance between enjoying everything London has to offer and watching Ru Paul on Netflix. Despite having spent two years working from home together, they are more in love than ever."
                 />
                 <Typography
                   variant="body"
