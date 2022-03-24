@@ -176,7 +176,7 @@ const Home = (): ReactElement => {
               />
               <Typography
                 variant="body"
-                text="Evening guests are welcome to attend the ceremony (arrive 12-12:30 at Convocation House). Please feel free to have lunch/dinner in Oxford and we will feed you chips and sausage butties around 9pm!"
+                text="Evening guests are welcome to attend the ceremony (arrive 12:30 at Convocation House, ceremony starts at 1pm). Please feel free to have lunch/dinner in Oxford and we will feed you chips and sausage butties around 9pm!"
               />
             </div>
 
@@ -464,7 +464,7 @@ const Home = (): ReactElement => {
 
               <Typography
                 variant="body"
-                text="If you are attending the ceremony, arrive between 12 noon and 12:30 at Convocation House, which is a room inside the Bodleian Library building. To get there, start on Broad Street, then climb the steps or ramp to the courtyard. Go past the Sheldonian Theatre and look for the door with our signs up!"
+                text="If you are attending the ceremony, arrive at 12:30pm (ceremony starts at 1pm) at Convocation House, which is a room inside the Bodleian Library building. To get there, start on Broad Street, then climb the steps or ramp to the courtyard. Go past the Sheldonian Theatre and look for the door with our signs up!"
                 style={{
                   textAlign: "center",
                   padding: "1rem",
