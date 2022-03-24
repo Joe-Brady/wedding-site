@@ -373,7 +373,7 @@ const Home = (): ReactElement => {
 
                 <Typography
                   variant="body"
-                  text="Fast-forward to 2012. Jasmine had got a place at Oxford University, studying Classical Archaeology and Ancient History. Joe joined SAE Institute (School of Audio Engineering) just outside Oxford."
+                  text="Fast-forward to 2012. Jasmine had been offered a place at the University of Oxford, studying Classical Archaeology and Ancient History. Joe joined SAE Institute (School of Audio Engineering) just outside Oxford."
                 />
 
                 <StoryImageTwoUp>
@@ -383,7 +383,7 @@ const Home = (): ReactElement => {
 
                 <Typography
                   variant="body"
-                  text="Joe’s university didn’t really put on a proper fresher’s week, so he got in touch with an old friend of his, Rowan, who he knew from a place called the Hibernia Centre in Avonmouth where Irish music was taught in an echoey community hall. Joe knew Rowan was in her second year at Oxford University (studying Classics) and would likely know the ins and outs of any University parties."
+                  text="Joe’s university didn’t really put on a proper fresher’s week, so he got in touch with an old friend of his, Rowan, who he knew from a place called the Hibernia Centre in Avonmouth where Irish music was taught in an echoey community hall. Joe knew Rowan was in her second year at the University of Oxford (studying Classics) and would likely know the ins-and-outs of any University parties."
                 />
 
                 <Typography
