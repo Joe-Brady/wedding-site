@@ -143,7 +143,7 @@ const Home = (): ReactElement => {
               name="type_of_guest"
               options={[
                 { value: "Full day", text: "Full day" },
-                { value: "Evening", text: "Evening" },
+                { value: "Evening", text: "Evening (+ ceremony optional)" },
               ]}
               onChange={(event) =>
                 event.target.value === "Evening"
